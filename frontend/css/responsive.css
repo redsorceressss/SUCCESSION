@@ -1,0 +1,50 @@
+/**
+ * Responsive Breakpoints and Mobile Touch Friendly Adjustments
+ */
+
+@media (max-width: 768px) {
+  .btn-icon {
+    display: inline-block;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 64px;
+    left: -260px;
+    height: calc(100vh - 64px);
+    z-index: 100;
+    transition: left 0.3s ease;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .app-sidebar.sidebar-open {
+    left: 0;
+  }
+
+  .app-content {
+    padding: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-handshake-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-name {
+    display: none;
+  }
+}

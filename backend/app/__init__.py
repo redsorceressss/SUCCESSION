@@ -1,0 +1,1 @@
+"""SUCCESSION Backend Application Package."""

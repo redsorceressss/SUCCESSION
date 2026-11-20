@@ -1,0 +1,339 @@
+/**
+ * SUCCESSION — Enterprise Fintech SaaS Design System
+ * Theme Tokens & Tabler Custom Property Overrides
+ * Visual Identity: Warm Ivory canvas, Crisp white surfaces, Charcoal typography,
+ * Restrained Antique Gold accents, and Deep Forest Green verification anchors.
+ */
+
+:root {
+  /* Base Colors & Typography (aligned with integrated SUCCESSION UI) */
+  --tblr-body-bg: #F4EEE6;
+  --tblr-body-color: #1C1916;
+  --tblr-muted: #5B5650;
+  --tblr-card-bg: #ffffff;
+  --tblr-border-color: #E3D9C8;
+  --tblr-border-color-translucent: rgba(227, 217, 200, 0.75);
+
+  /* Primary Accent: Antique/Gold */
+  --tblr-primary: #8A6420;
+  --tblr-primary-rgb: 138, 100, 32;
+  --tblr-primary-fg: #ffffff;
+  --tblr-link-color: #8A6420;
+  --tblr-link-hover-color: #6f5019;
+
+  /* Secondary Accent / Success: Deep Forest Green */
+  --tblr-success: #14532d;
+  --tblr-success-rgb: 20, 83, 45;
+  --tblr-success-fg: #ffffff;
+
+  /* Warning / Escrow Hold: Amber */
+  --tblr-warning: #b8801f;
+  --tblr-warning-rgb: 184, 128, 31;
+  --tblr-warning-fg: #ffffff;
+
+  /* Danger / Dispute: Garnet */
+  --tblr-danger: #6E1F1F;
+  --tblr-danger-rgb: 110, 31, 31;
+  --tblr-danger-fg: #ffffff;
+
+  /* Custom Identity Tokens */
+  --succession-gold: #C9A24A;
+  --succession-gold-lt: #FBF4E4;
+  --succession-gold-border: #D9C08A;
+  --succession-forest: #14532d;
+  --succession-forest-lt: #f2f8f4;
+  --succession-ivory: #F4EEE6;
+  --succession-charcoal: #1C1916;
+  --succession-border: #E3D9C8;
+
+  /* Card Shadows */
+  --tblr-box-shadow: 0 1px 3px rgba(28, 25, 22, 0.05), 0 1px 2px rgba(28, 25, 22, 0.03);
+  --tblr-card-border-radius: 10px;
+}
+
+/* Canvas & Layout Base */
+body {
+  background-color: var(--tblr-body-bg) !important;
+  color: var(--tblr-body-color);
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+h1, h2, h3, .page-title, .navbar-brand, .card-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0.01em;
+}
+
+/* Sidebar Branding & Polish */
+.navbar-vertical {
+  background: #ffffff !important;
+  border-right: 1px solid var(--tblr-border-color) !important;
+  box-shadow: 1px 0 3px rgba(15, 23, 42, 0.02);
+}
+
+.navbar-vertical .navbar-brand {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--tblr-border-color);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--succession-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.brand-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #d4af37, #b38822);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(179, 136, 34, 0.25);
+}
+
+/* Navigation Links */
+.navbar-vertical .nav-item .nav-link {
+  color: #334155;
+  font-size: 0.885rem;
+  font-weight: 500;
+  border-radius: 6px;
+  margin: 0.15rem 0.65rem;
+  padding: 0.55rem 0.75rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.navbar-vertical .nav-item.active .nav-link,
+.navbar-vertical .nav-item .nav-link.active {
+  background-color: var(--succession-gold-lt) !important;
+  color: var(--succession-gold) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--succession-gold);
+}
+
+.navbar-vertical .nav-item .nav-link:hover {
+  background-color: #f8fafc;
+  color: var(--succession-gold);
+}
+
+.nav-link-icon {
+  margin-right: 0.65rem;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Top Navbar */
+.navbar-top {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--tblr-border-color) !important;
+  padding: 0.65rem 1.25rem;
+}
+
+/* Card Styling */
+.card {
+  background: var(--tblr-card-bg);
+  border: 1px solid var(--tblr-border-color) !important;
+  border-radius: 8px;
+  box-shadow: var(--tblr-box-shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+}
+
+.card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--tblr-border-color);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+}
+
+.card-title {
+  color: var(--succession-charcoal);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* KPI / Subheader metrics */
+.metric-subheader {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tblr-muted);
+  margin-bottom: 0.4rem;
+}
+
+.metric-number {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--succession-charcoal);
+  line-height: 1.15;
+}
+
+.metric-unit {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--tblr-muted);
+  margin-left: 0.25rem;
+}
+
+/* Gold Theme Avatars */
+.avatar-gold {
+  background-color: var(--succession-gold-lt) !important;
+  color: var(--succession-gold) !important;
+  border: 1px solid var(--succession-gold-border);
+}
+
+.avatar-forest {
+  background-color: var(--succession-forest-lt) !important;
+  color: var(--succession-forest) !important;
+  border: 1px solid rgba(20, 83, 45, 0.2);
+}
+
+/* Status Badges */
+.badge-gold {
+  background-color: var(--succession-gold-lt);
+  color: var(--succession-gold);
+  border: 1px solid var(--succession-gold-border);
+  font-weight: 600;
+}
+
+.badge-forest {
+  background-color: var(--succession-forest-lt);
+  color: var(--succession-forest);
+  border: 1px solid rgba(20, 83, 45, 0.25);
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--succession-gold) !important;
+  border-color: var(--succession-gold) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(179, 136, 34, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-dark) !important;
+  border-color: var(--gold-dark) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--succession-gold) !important;
+  color: var(--succession-gold) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--succession-gold) !important;
+  color: #ffffff !important;
+}
+
+/* Tables */
+.table-vcenter td, .table-vcenter th {
+  vertical-align: middle;
+}
+
+.table th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tblr-muted);
+  background-color: #faf9f5;
+  border-bottom: 1px solid var(--tblr-border-color);
+  padding: 0.65rem 1rem;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--tblr-border-color);
+  font-size: 0.885rem;
+}
+
+/* Connectivity status pill */
+.connectivity-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.connectivity-pill.online {
+  background-color: var(--succession-forest-lt);
+  color: var(--succession-forest);
+  border: 1px solid rgba(20, 83, 45, 0.25);
+}
+
+.connectivity-pill.offline {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.connectivity-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.connectivity-pill.online .dot {
+  background-color: #16a34a;
+}
+
+.connectivity-pill.offline .dot {
+  background-color: #dc2626;
+}
+
+/* Mobile responsive sidebar drawer */
+@media (max-width: 991.98px) {
+  /* Hide sidebar by default on mobile; Tabler's navbar-expand-lg
+     already collapses .navbar-collapse, but the outer <aside> must
+     also be treated as an off-canvas drawer. */
+  .navbar-vertical {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -280px;
+    z-index: 1045;
+    width: 270px;
+    transition: left 0.25s ease;
+    box-shadow: none;
+    overflow-y: auto;
+  }
+  .navbar-vertical.show {
+    left: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  /* When sidebar is shown, expand inner menu too */
+  .navbar-vertical.show .navbar-collapse {
+    display: block !important;
+  }
+  /* Overlay behind open drawer */
+  .navbar-vertical.show::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 270px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+  /* Ensure page-wrapper takes full width */
+  .page-wrapper {
+    margin-left: 0 !important;
+  }
+}

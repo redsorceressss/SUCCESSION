@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SUCCESSION Scale-Photo Dataset Splits Manifest",
+  "description": "Declares train/validation/test candidate membership for leakage-aware evaluation. Use image_ids and/or capture/device groups. The validator enforces no duplicate images across splits and checks device/session leakage when metadata is available.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dataset", "version", "splits"],
+  "properties": {
+    "dataset": { "type": "string" },
+    "version": { "type": "string" },
+    "created_at": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] },
+    "splits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["train", "val", "test"],
+      "properties": {
+        "train": { "$ref": "#/$defs/split" },
+        "val": { "$ref": "#/$defs/split" },
+        "test": { "$ref": "#/$defs/split" }
+      }
+    }
+  },
+  "$defs": {
+    "split": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["image_ids"],
+      "properties": {
+        "image_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "device_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "capture_session_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

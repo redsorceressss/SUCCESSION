@@ -1,0 +1,82 @@
+[
+  {
+    "id": "rag_01",
+    "query": "What is the official fineness value for 22 karat gold jewellery under BIS?",
+    "expected_chunk_keywords": ["22 Karat", "916"],
+    "expected_answer_contains": ["916", "22"],
+    "is_out_of_domain": false,
+    "description": "Standard purity inquiry"
+  },
+  {
+    "id": "rag_02",
+    "query": "What are the three marks on mandatory hallmarked gold jewellery in India?",
+    "expected_chunk_keywords": ["three distinct marks", "HUID", "BIS Standard Mark"],
+    "expected_answer_contains": ["BIS", "HUID", "Karat"],
+    "is_out_of_domain": false,
+    "description": "Mandatory hallmark elements"
+  },
+  {
+    "id": "rag_03",
+    "query": "What fineness corresponds to 24KS under BIS hallmarking?",
+    "expected_chunk_keywords": ["24 Karat Standard", "995"],
+    "expected_answer_contains": ["995", "24KS"],
+    "is_out_of_domain": false,
+    "description": "24KS standard fineness value"
+  },
+  {
+    "id": "rag_04",
+    "query": "How can a customer verify the HUID number on a gold ornament?",
+    "expected_chunk_keywords": ["BIS CARE", "Verify HUID"],
+    "expected_answer_contains": ["BIS CARE"],
+    "is_out_of_domain": false,
+    "description": "HUID verification channel"
+  },
+  {
+    "id": "rag_05",
+    "query": "What compensation is a consumer entitled to if hallmarked jewellery is below declared purity?",
+    "expected_chunk_keywords": ["compensation", "two times"],
+    "expected_answer_contains": ["two times", "shortfall"],
+    "is_out_of_domain": false,
+    "description": "Consumer compensation formula"
+  },
+  {
+    "id": "rag_06",
+    "query": "What details must a jeweller specify on the retail sales invoice?",
+    "expected_chunk_keywords": ["retail invoice", "Net weight", "HUID"],
+    "expected_answer_contains": ["Net weight", "HUID"],
+    "is_out_of_domain": false,
+    "description": "Mandatory invoice fields"
+  },
+  {
+    "id": "rag_07",
+    "query": "What is the fineness for 14K and 18K gold articles?",
+    "expected_chunk_keywords": ["14 Karat", "585", "18 Karat", "750"],
+    "expected_answer_contains": ["585", "750"],
+    "is_out_of_domain": false,
+    "description": "Multi-karat fineness retrieval"
+  },
+  {
+    "id": "rag_08",
+    "query": "Can a jeweller resize an article without fresh hallmarking?",
+    "expected_chunk_keywords": ["resizing", "structural alteration", "fresh hallmarking"],
+    "expected_answer_contains": ["fresh hallmarking"],
+    "is_out_of_domain": false,
+    "description": "Post-hallmarking alteration rule"
+  },
+  {
+    "id": "rag_ood_01",
+    "query": "How do I make Mysore Pak sweet at home?",
+    "expected_chunk_keywords": [],
+    "expected_answer_contains": [],
+    "is_out_of_domain": true,
+    "description": "Unrelated cooking query (must abstain)"
+  },
+  {
+    "id": "rag_ood_02",
+    "query": "What is the maximum baggage allowance on domestic IndiGo flights?",
+    "expected_chunk_keywords": [],
+    "expected_answer_contains": [],
+    "is_out_of_domain": true,
+    "description": "Airline baggage query (must abstain)"
+  }
+]

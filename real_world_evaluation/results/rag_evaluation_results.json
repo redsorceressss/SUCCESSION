@@ -1,0 +1,161 @@
+{
+  "benchmark": "BIS Hallmarking Official FAQs Real-World RAG Benchmark",
+  "timestamp": "2026-11-10T12:47:36Z",
+  "source_document": "C:\\Users\\SREENIDHI D V\\OneDrive\\Desktop\\FOLDERS\\INTERNSHIP, LEETCODE, CODING, PLACEMENT ETC\\INTERNSHIP STUFF\\HACKATHONS\\TECH4BHARAT\\succession\\real_world_evaluation\\datasets\\rag\\bis_summaries\\raw\\bis_hallmarking_faqs.txt",
+  "source_license": "Government of India Portal Reuse Policy (With Attribution)",
+  "total_chunks_indexed": 8,
+  "total_queries_evaluated": 10,
+  "in_domain_queries": 8,
+  "out_of_domain_queries": 2,
+  "metrics": {
+    "precision_at_1": 1.0,
+    "mean_reciprocal_rank_mrr": 1.0,
+    "grounded_answer_rate": 1.0,
+    "out_of_domain_abstention_rate": 1.0,
+    "hallucinated_unsupported_answers": 0
+  },
+  "query_details": [
+    {
+      "id": "rag_01",
+      "query": "What is the official fineness value for 22 karat gold jewellery under BIS?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_02",
+      "query": "What are the three marks on mandatory hallmarked gold jewellery in India?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_03",
+      "query": "What fineness corresponds to 24KS under BIS hallmarking?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_04",
+      "query": "How can a customer verify the HUID number on a gold ornament?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_05",
+      "query": "What compensation is a consumer entitled to if hallmarked jewellery is below declared purity?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_06",
+      "query": "What details must a jeweller specify on the retail sales invoice?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_07",
+      "query": "What is the fineness for 14K and 18K gold articles?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_08",
+      "query": "Can a jeweller resize an article without fresh hallmarking?",
+      "is_out_of_domain": false,
+      "retrieved_count": 3,
+      "precision_at_1": 1,
+      "reciprocal_rank": 1.0,
+      "grounded": true,
+      "status": "PASS",
+      "retrieved_sources": [
+        "bis_official_faqs",
+        "bis_official_faqs",
+        "bis_official_faqs"
+      ]
+    },
+    {
+      "id": "rag_ood_01",
+      "query": "How do I make Mysore Pak sweet at home?",
+      "is_out_of_domain": true,
+      "retrieved_count": 0,
+      "precision_at_1": null,
+      "reciprocal_rank": null,
+      "grounded": false,
+      "status": "PASS_ABSTAINED",
+      "retrieved_sources": []
+    },
+    {
+      "id": "rag_ood_02",
+      "query": "What is the maximum baggage allowance on domestic IndiGo flights?",
+      "is_out_of_domain": true,
+      "retrieved_count": 0,
+      "precision_at_1": null,
+      "reciprocal_rank": null,
+      "grounded": false,
+      "status": "PASS_ABSTAINED",
+      "retrieved_sources": []
+    }
+  ]
+}

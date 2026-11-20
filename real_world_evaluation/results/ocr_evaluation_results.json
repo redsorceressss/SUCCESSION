@@ -1,0 +1,157 @@
+{
+  "benchmark": "Mendeley Seven-Segment Energy Meter Real-World OCR Benchmark",
+  "timestamp": "2026-11-10T12:47:58Z",
+  "dataset_source": "https://data.mendeley.com/datasets/fnn44p4mj8/1 (Karthick & Kavaskar, 2019)",
+  "license": "CC0 1.0 Public Domain Dedication",
+  "device_type": "Digital Energy Meter (Not Jewellery Weighing Scale)",
+  "total_images_evaluated": 169,
+  "metrics": {
+    "exact_reading_accuracy": 0.0,
+    "character_error_rate_cer": 0.9846,
+    "unreadable_abstention_rate": 0.7574,
+    "high_confidence_fabrication_count": 0,
+    "safe_abstention_behavior": "Verified: Pipeline returns UNREADABLE instead of fabricating measurements on unsegmented meter displays."
+  },
+  "condition_breakdown": {
+    "1)Day Light": {
+      "sample_count": 50,
+      "exact_matches": 0,
+      "exact_match_accuracy": 0.0,
+      "unreadable_rate": 0.84,
+      "character_error_rate_cer": 0.9821
+    },
+    "2)Night": {
+      "sample_count": 49,
+      "exact_matches": 0,
+      "exact_match_accuracy": 0.0,
+      "unreadable_rate": 0.5714,
+      "character_error_rate_cer": 0.9829
+    },
+    "3)Tilted": {
+      "sample_count": 50,
+      "exact_matches": 0,
+      "exact_match_accuracy": 0.0,
+      "unreadable_rate": 0.84,
+      "character_error_rate_cer": 0.9863
+    },
+    "4)Blurred": {
+      "sample_count": 20,
+      "exact_matches": 0,
+      "exact_match_accuracy": 0.0,
+      "unreadable_rate": 0.8,
+      "character_error_rate_cer": 0.9913
+    }
+  },
+  "sample_evaluations": [
+    {
+      "image": "1.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "035259",
+      "predicted_reading": "2",
+      "raw_string": "2",
+      "status": "READABLE",
+      "confidence": 0.95,
+      "exact_match": false,
+      "edit_distance": 5
+    },
+    {
+      "image": "10.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "70141",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    },
+    {
+      "image": "11.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "45409",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    },
+    {
+      "image": "12.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "0119037",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    },
+    {
+      "image": "13.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "19570",
+      "predicted_reading": "1",
+      "raw_string": "1",
+      "status": "READABLE",
+      "confidence": 0.95,
+      "exact_match": false,
+      "edit_distance": 4
+    },
+    {
+      "image": "14.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "0020631",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    },
+    {
+      "image": "15.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "100821",
+      "predicted_reading": "1",
+      "raw_string": "1",
+      "status": "READABLE",
+      "confidence": 0.95,
+      "exact_match": false,
+      "edit_distance": 5
+    },
+    {
+      "image": "16.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "63248",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    },
+    {
+      "image": "17.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "39379",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    },
+    {
+      "image": "18.JPG",
+      "condition": "1)Day Light",
+      "ground_truth": "70382",
+      "predicted_reading": null,
+      "raw_string": "",
+      "status": "UNREADABLE",
+      "confidence": 0.2,
+      "exact_match": false,
+      "edit_distance": 0
+    }
+  ]
+}

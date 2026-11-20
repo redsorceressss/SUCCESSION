@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SUCCESSION — Every Transaction. Every Gram. Accounted For.</title>
+<meta name="description" content="SUCCESSION brings transparency, accountability and digital traceability to every gold transaction.">
+<meta name="theme-color" content="#0D0B09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231C1916'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23C9A24A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/fx.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-enter" data-hero-delay="350">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-ledger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h11a3 3 0 0 1 3 3V19H8a3 3 0 0 1-3-3V4.5z"/><path d="M8 19a3 3 0 0 1-3-3M9 9h6M9 12.5h4"/></symbol><symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M7.5 19.5h9M4 8h16"/><path d="M4 8l-2 6a3 3 0 0 0 4 0L4 8zM20 8l-2 6a3 3 0 0 0 4 0l-2-6z"/></symbol><symbol id="i-handover" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 5 6v5.5c0 4.2 2.8 7.2 7 9 4.2-1.8 7-4.8 7-9V6l-7-2.5z"/><path d="m9 12 2.2 2.2L15.2 10"/></symbol><symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20V3.5z"/><path d="M14 3.5V8h4M9.5 12.5h5M9.5 15.5h5"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5"/></symbol><symbol id="i-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16M7.5 12h9"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol><symbol id="i-overview" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5"/><rect x="13.5" y="4" width="6.5" height="6.5"/><rect x="4" y="13.5" width="6.5" height="6.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6.5h12M8 12h12M8 17.5h12M4 6.5h.01M4 12h.01M4 17.5h.01"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3.5 19h17L12 4z"/><path d="M12 10v4.2M12 16.8h.01"/></symbol><symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c.6-3.6 3.4-5.5 7-5.5s6.4 1.9 7 5.5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol><symbol id="i-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4.5h4.5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H14M10 8l-4 4 4 4M6 12h10"/></symbol><symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol><symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></symbol><symbol id="i-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></symbol><symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4h5M10.5 4v5.2L5.4 18a1.6 1.6 0 0 0 1.4 2.5h10.4a1.6 1.6 0 0 0 1.4-2.5L13.5 9.2V4"/><path d="M8 14.5h8"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3.5"/><path d="M11.5 12H21M18 12v3M15 12v2"/></symbol><symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 1.5h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol><symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol><symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><circle cx="9" cy="10" r="1.6"/><path d="M4 18l5.5-5 4 3.5 3-2.5 3.5 3.5"/></symbol><symbol id="i-vault" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><circle cx="12" cy="12" r="3.4"/><path d="M12 8.6V6M12 18v-2.6M8.6 12H6M18 12h-2.6"/></symbol><symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol></svg>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="home.html#top" aria-label="SUCCESSION — home"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1C1916"/><circle cx="16" cy="16" r="6" fill="#C9A24A"/></svg></span><span class="wordmark">SUCCESSION</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary"><a href="home.html" data-sec="top">Home</a><a href="home.html#about" data-sec="about">About</a><a href="home.html#how" data-sec="how">How it works</a><a href="home.html#features" data-sec="features">Features</a><a href="home.html#trust" data-sec="trust">Trust &amp; Security</a>
+      <div class="nav-mobile-cta"><a class="btn btn--secondary" href="login.html">Login</a><a class="btn btn--primary" href="register.html">Get started</a></div>
+    </nav>
+    <div class="nav-cta"><a class="nav-login" href="login.html">Login</a><a class="btn btn--secondary btn--sm" href="register.html">Get started</a></div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<!-- ============================== HERO ============================== -->
+<section class="hero tone-stage" id="top" data-sec-id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-fx="track" data-now>For jewellers, karigars and assayers</p>
+      <h1 class="display hero-title" data-fx="mask" data-now aria-label="Every Transaction. Every Gram. Accounted For.">
+        <span class="ln"><span>Every Transaction.</span></span>
+        <span class="ln"><span>Every Gram.</span></span>
+        <span class="ln ln--curve"><span><em class="ital squig">Accounted For.<svg viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 5 C 62 24, 214 25, 296 3"/></svg></em></span></span>
+      </h1>
+      <p class="lead" data-fx="blur" data-now style="--d:650ms">Bringing transparency, accountability and digital traceability to every gold transaction.</p>
+      <div class="hero-actions" data-fx="blur" data-now style="--d:850ms">
+        <a class="btn btn--primary btn--lg" href="register.html">Get started</a>
+        <a class="btn btn--secondary btn--lg" href="#how">See how it works</a>
+      </div>
+      <p class="hero-aside" data-fx="blur" data-now style="--d:1000ms">Already have an account? <a class="btn btn--text" href="login.html">Login</a></p>
+    </div>
+
+    <div class="hero-art" aria-label="A SUCCESSION record beside the piece it belongs to">
+      <figure class="jcard jcard--back" aria-hidden="true">
+        <span class="jcard-face" style="background-image:url('assets/img/cards/card3.webp')"></span>
+        <span class="jcard-veil"></span>
+      </figure>
+      <figure class="jcard jcard--front">
+        <span class="jcard-face" style="background-image:url('assets/img/cards/card1.webp')"></span>
+        <span class="jcard-badge"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1C1916"/><circle cx="16" cy="16" r="6" fill="#C9A24A"/></svg></span>
+        <figcaption class="jcard-meta"><span class="jcard-title">Maharani Moti Choker</span><span class="jcard-pills"><b>Kundan</b><b>Gold · Pearl</b></span></figcaption>
+      </figure>
+      <aside class="record" data-fx="blur" data-now style="--d:1300ms" aria-label="Illustrative record">
+        <header><span class="label">Record</span><span class="data rec-id">TX-1047</span></header>
+        <dl>
+          <div><dt>Issued by jeweller</dt><dd class="data">24.860 g</dd></div>
+          <div><dt>Karigar's reading</dt><dd class="data">24.860 g</dd></div>
+          <div><dt>Variance</dt><dd class="data pos">0.000 g</dd></div>
+          <div><dt>Purity</dt><dd class="data">22K · 91.6%</dd></div>
+        </dl>
+        <footer><span class="status status--ok">Acknowledged</span><span class="rec-note">Illustrative entry</span></footer>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section class="section tone-porcelain" id="about" data-sec-id="about">
+  <div class="wrap grid about">
+    <div class="about-head">
+      <p class="eyebrow" data-fx="track">About SUCCESSION</p>
+      <h2 class="h2" data-fx="words">One shared account of every gram.</h2>
+    </div>
+    <div class="about-body">
+      <p class="lead" data-fx="blur">SUCCESSION is a record-keeping platform for the gold trade. Jewellers, karigars and assayers work from the same time-stamped entry, so agreement no longer depends on memory or paper slips.</p>
+      <ul class="cast">
+        <li class="reveal-up"><h3 class="h3">Jeweller</h3><p>Issues gold, records weight and purity, reviews what has been acknowledged, and settles the account.</p></li>
+        <li class="reveal-up" style="--d:80ms"><h3 class="h3">Karigar</h3><p>Receives gold, confirms the weight on their own scale, raises a difference when there is one, and records what is returned.</p></li>
+        <li class="reveal-up" style="--d:160ms"><h3 class="h3">Assayer</h3><p>Tests purity when asked, and attaches the result to the entry it belongs to.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROBLEM ============================== -->
+<section class="section tone-linen" id="problem">
+  <div class="wrap grid problem">
+    <div class="problem-head">
+      <p class="eyebrow" data-fx="track">The problem</p>
+      <h2 class="h2 problem-title">Trust has been resting on <span class="swap" data-swap><span class="old">memory</span><span class="new">a shared record</span></span>.</h2>
+    </div>
+    <ol class="frictions">
+      <li class="reveal-up"><h3>Weights are agreed at the counter.</h3><p>A figure spoken across a table is remembered differently by each side.</p></li>
+      <li class="reveal-up" style="--d:80ms"><h3>Slips go missing, or change.</h3><p>Paper and phone notes can be lost, rewritten, or never made at all.</p></li>
+      <li class="reveal-up" style="--d:160ms"><h3>A dispute has nothing to stand on.</h3><p>Without evidence taken at the moment of handover, every disagreement is one person's word against another's.</p></li>
+      <li class="reveal-up" style="--d:240ms"><h3>Settlement means reconstruction.</h3><p>Closing an account turns into piecing together who gave and received what, and when.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== SOLUTION ============================== -->
+<section class="section tone-ink" id="solution">
+  <div class="wrap">
+    <div class="solution-head">
+      <p class="eyebrow" data-fx="track">The SUCCESSION record</p>
+      <h2 class="h2" data-fx="mask"><span class="ln"><span>One record. Three parties.</span></span><span class="ln"><span>Every gram <em class="ital">traced</em>.</span></span></h2>
+    </div>
+    <dl class="principles">
+      <div class="reveal-up"><dt>Transparency</dt><dd>Jeweller, karigar and assayer see the same entry, in the same terms, at the same moment.</dd></div>
+      <div class="reveal-up" style="--d:90ms"><dt>Accountability</dt><dd>Every action carries a name, a role and a time. Nothing changes without leaving a trace.</dd></div>
+      <div class="reveal-up" style="--d:180ms"><dt>Traceability</dt><dd>Follow a quantity of gold from issue, through work and return, to settlement.</dd></div>
+      <div class="reveal-up" style="--d:270ms"><dt>Verification</dt><dd>Purity is tested by the assayer and the result is attached to the entry it belongs to.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================== HOW IT WORKS ============================== -->
+<section class="section tone-porcelain" id="how" data-sec-id="how">
+  <div class="wrap">
+    <div class="how-head">
+      <p class="eyebrow" data-fx="track">How it works</p>
+      <h2 class="h2" data-fx="words">From the first weighment to the final settlement.</h2>
+    </div>
+    <ol class="rail" data-observe>
+      <li class="step reveal-up"><span class="node" aria-hidden="true"></span><h3 class="h3">Issue</h3><span class="role">Jeweller</span><p>Records weight, purity, the item and the karigar it goes to. Photos or a slip can be attached.</p></li>
+      <li class="step reveal-up" style="--d:110ms"><span class="node" aria-hidden="true"></span><h3 class="h3">Acknowledge</h3><span class="role">Karigar</span><p>Weighs on their own scale and confirms. If the readings differ, the difference is shown to both.</p></li>
+      <li class="step reveal-up" style="--d:220ms"><span class="node" aria-hidden="true"></span><h3 class="h3">Work &amp; return</h3><span class="role">Karigar → Jeweller</span><p>Finished pieces and leftover metal are recorded as a return, weighed and acknowledged by the jeweller.</p></li>
+      <li class="step reveal-up" style="--d:330ms"><span class="node" aria-hidden="true"></span><h3 class="h3">Verify</h3><span class="role">Assayer</span><p>Tests purity on request. The result is attached to the entry; a mismatch is flagged to both parties.</p></li>
+      <li class="step reveal-up" style="--d:440ms"><span class="node" aria-hidden="true"></span><h3 class="h3">Settle</h3><span class="role">Jeweller &amp; Karigar</span><p>The passbook balances. Open differences are resolved, with evidence, before the account closes.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== FEATURES / ROLE EXPLORER ============================== -->
+<section class="section tone-pearl" id="features" data-sec-id="features">
+  <div class="wrap">
+    <div class="feat-head">
+      <p class="eyebrow" data-fx="track">Features</p>
+      <h2 class="h2" data-fx="words">Built for the three people at the counter.</h2>
+    </div>
+    <div class="explorer" id="explorer">
+      <div class="ex-tabs" role="tablist" aria-label="Choose a role" aria-orientation="vertical">
+        <button class="ex-tab" role="tab" id="tab-jeweller" aria-selected="true" aria-controls="panel-jeweller" data-role="jeweller"><span class="h3">Jeweller</span><span class="ex-sub">Issue, track, settle</span></button>
+        <button class="ex-tab" role="tab" id="tab-karigar" aria-selected="false" aria-controls="panel-karigar" data-role="karigar" tabindex="-1"><span class="h3">Karigar</span><span class="ex-sub">Acknowledge, work, return</span></button>
+        <button class="ex-tab" role="tab" id="tab-assayer" aria-selected="false" aria-controls="panel-assayer" data-role="assayer" tabindex="-1"><span class="h3">Assayer</span><span class="ex-sub">Verify and attach</span></button>
+      </div>
+      <div class="ex-stage">
+        <div class="ex-panel" role="tabpanel" id="panel-jeweller" aria-labelledby="tab-jeweller" data-role="jeweller">
+          <p class="ex-copy">See every karigar's balance, what is waiting to be acknowledged, and what is in dispute — in one view. Request an assay from any entry, and resolve a difference with the evidence in front of you.</p>
+          <figure class="shot"><img src="assets/img/shots/jeweller.webp" alt="The jeweller dashboard: gold held by each karigar, entries awaiting acknowledgement, and recent transactions." width="1600" height="1000" loading="lazy"></figure>
+          <a class="btn btn--text" href="app/jeweller.html">Open the jeweller demo <svg class="ic " aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ex-panel" role="tabpanel" id="panel-karigar" aria-labelledby="tab-karigar" data-role="karigar" hidden>
+          <p class="ex-copy">Confirm what you received on your own scale, raise a difference with a photograph, and record what you hand back. Your passbook shows exactly what you hold.</p>
+          <figure class="shot"><img src="assets/img/shots/karigar.webp" alt="The karigar dashboard: entries to acknowledge, gold held, and the personal passbook." width="1600" height="1000" loading="lazy"></figure>
+          <a class="btn btn--text" href="app/karigar.html">Open the karigar demo <svg class="ic " aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ex-panel" role="tabpanel" id="panel-assayer" aria-labelledby="tab-assayer" data-role="assayer" hidden>
+          <p class="ex-copy">A queue of entries waiting for purity testing. Record the measured result against the declared purity; a mismatch is flagged to both parties, and the result stays with the entry.</p>
+          <figure class="shot"><img src="assets/img/shots/assayer.webp" alt="The assayer dashboard: the verification queue and recorded results." width="1600" height="1000" loading="lazy"></figure>
+          <a class="btn btn--text" href="app/assayer.html">Open the assayer demo <svg class="ic " aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRANSACTION TRANSPARENCY ============================== -->
+<section class="section tone-ink" id="transparency">
+  <div class="wrap grid trans">
+    <div class="trans-copy">
+      <p class="eyebrow" data-fx="track">Transaction transparency</p>
+      <h2 class="h2" data-fx="mask"><span class="ln"><span>Both sides weigh.</span></span><span class="ln"><span>Both sides <em class="ital">see</em>.</span></span></h2>
+      <p class="body" data-fx="blur">The karigar's reading is compared with the jeweller's issue weight the moment it is recorded. A difference inside tolerance is acknowledged. A difference outside it is flagged to both parties and cannot be quietly absorbed.</p>
+      <p class="meta" data-fx="blur" style="--d:120ms">Move the karigar's reading to see how the record responds. Tolerance in this demo is 0.020 g.</p>
+    </div>
+    <div class="weigh" id="weigh" data-observe>
+      <header><span class="label">Weighment comparison</span><span class="data weigh-id">TX-1047</span></header>
+      <div class="weigh-row"><span>Issued by jeweller</span><span class="data big"><span data-count="24.860" data-decimals="3">24.860</span> <i>g</i></span></div>
+      <div class="weigh-row"><span>Karigar's reading</span><span class="data big"><span id="wRead">24.860</span> <i>g</i></span></div>
+      <div class="weigh-slider">
+        <label class="sr-only" for="wRange">Karigar's reading in grams</label>
+        <input type="range" id="wRange" min="24.800" max="24.920" step="0.005" value="24.860">
+        <div class="ticks" aria-hidden="true"><span>24.800</span><span>24.860</span><span>24.920</span></div>
+      </div>
+      <div class="weigh-row"><span>Variance</span><span class="data big" id="wVar">0.000 <i>g</i></span></div>
+      <div class="weigh-row"><span>Tolerance</span><span class="data">± 0.020 g</span></div>
+      <footer><span class="status status--ok" id="wStatus">Acknowledged</span><span class="weigh-note" id="wNote">Within tolerance. Both parties sign off.</span></footer>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EVIDENCE & DISPUTES ============================== -->
+<section class="section tone-porcelain" id="disputes">
+  <div class="wrap grid disp">
+    <div class="disp-time">
+      <p class="label disp-label">Illustrative dispute · TX-1046</p>
+      <ol class="timeline" id="dispTimeline">
+        <li class="reveal-up"><span class="node"></span><div><div class="when">16 Nov · 10:12</div><p class="what"><b>Aurelia Jewellers</b> issued 9.150 g of 22K gold to Devika Rao.</p><div class="chips"><span class="chip"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-file"/></svg> issue-slip.jpg</span></div></div></li>
+        <li class="reveal-up" style="--d:90ms"><span class="node bad"></span><div><div class="when">16 Nov · 11:03</div><p class="what"><b>Devika Rao</b> recorded 9.120 g on her scale. Variance −0.030 g is outside tolerance and is flagged to both parties.</p></div></li>
+        <li class="reveal-up" style="--d:180ms"><span class="node bad"></span><div><div class="when">16 Nov · 11:05</div><p class="what"><b>Devika Rao</b> raised a dispute: “Display photographed after tare.”</p><div class="chips"><span class="chip"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-file"/></svg> scale-display.jpg</span></div></div></li>
+        <li class="reveal-up" style="--d:270ms"><span class="node info"></span><div><div class="when">17 Nov · 09:30</div><p class="what"><b>Aurelia Jewellers</b> reweighed with the karigar present. 9.120 g confirmed.</p></div></li>
+        <li class="reveal-up" style="--d:360ms"><span class="node ok"></span><div><div class="when">17 Nov · 09:34</div><p class="what"><b>Resolved.</b> Received weight accepted. Balance adjusted by −0.030 g.</p></div></li>
+      </ol>
+    </div>
+    <div class="disp-copy">
+      <p class="eyebrow" data-fx="track">Evidence &amp; disputes</p>
+      <h2 class="h2" data-fx="words">When numbers differ, the record answers.</h2>
+      <p class="body" data-fx="blur">A dispute is not a phone call. It is a timeline, opened at the moment the difference appears, with the evidence attached where everyone can see it.</p>
+      <dl class="keeps">
+        <div><dt>Photographs</dt><dd>of the scale display, taken at handover.</dd></div>
+        <div><dt>Slips and bills</dt><dd>scanned and attached to the entry.</dd></div>
+        <div><dt>Voice notes</dt><dd>kept alongside the written entry.</dd></div>
+        <div><dt>Assay results</dt><dd>stored with the purity they confirm.</dd></div>
+        <div><dt>Every change</dt><dd>with who made it and when.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AI-ASSISTED WORKFLOWS ============================== -->
+<section class="section tone-void" id="assist">
+  <div class="wrap">
+    <div class="assist-head grid">
+      <div class="assist-title">
+        <p class="eyebrow" data-fx="track">AI-assisted workflows</p>
+        <h2 class="h2" data-fx="mask"><span class="ln"><span>AI drafts.</span></span><span class="ln"><span>People <em class="ital">confirm</em>.</span></span></h2>
+      </div>
+      <p class="body assist-lead" data-fx="blur">Entries can be spoken, scanned or searched instead of typed. What the system reads is shown back as a draft. Nothing is saved until a person confirms it.</p>
+    </div>
+    <div class="assist" id="assist-demo" data-observe>
+      <div class="as-tabs" role="tablist" aria-label="AI-assisted tools">
+        <button role="tab" class="as-tab" id="as-t-voice" aria-selected="true" aria-controls="as-p-voice" data-mode="voice"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-mic"/></svg><span>Voice entry</span></button>
+        <button role="tab" class="as-tab" id="as-t-scan" aria-selected="false" aria-controls="as-p-scan" data-mode="scan" tabindex="-1"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-scan"/></svg><span>Slip scanning</span></button>
+        <button role="tab" class="as-tab" id="as-t-ask" aria-selected="false" aria-controls="as-p-ask" data-mode="ask" tabindex="-1"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Ask your records</span></button>
+      </div>
+      <div class="as-panels">
+        <div role="tabpanel" id="as-p-voice" class="as-panel" aria-labelledby="as-t-voice" data-mode="voice">
+          <div class="as-in"><span class="label">Heard</span><p class="as-say" id="asSay"></p></div>
+          <div class="as-out"><span class="label">Draft entry</span>
+            <dl class="fields" id="asFields-voice">
+              <div><dt>Karigar</dt><dd>Ramesh Soni</dd></div><div><dt>Weight</dt><dd class="data">24.860 g</dd></div><div><dt>Purity</dt><dd class="data">22K · 91.6%</dd></div><div><dt>Item</dt><dd>Kundan choker, base</dd></div>
+            </dl><span class="status status--wait">Draft · awaiting confirmation</span></div>
+        </div>
+        <div role="tabpanel" id="as-p-scan" class="as-panel" aria-labelledby="as-t-scan" data-mode="scan" hidden>
+          <div class="as-in"><span class="label">Scanned</span><div class="slip" aria-hidden="true"><div class="slip-line"></div><span>weighment-slip.jpg</span></div></div>
+          <div class="as-out"><span class="label">Draft entry</span>
+            <dl class="fields" id="asFields-scan">
+              <div><dt>Date</dt><dd class="data">16 Nov 2026</dd></div><div><dt>Party</dt><dd>Devika Rao</dd></div><div class="check-this"><dt>Weight</dt><dd class="data">9.1?0 g <em>Low confidence — please check</em></dd></div><div><dt>Purity</dt><dd class="data">22K</dd></div>
+            </dl><span class="status status--wait">Draft · awaiting confirmation</span></div>
+        </div>
+        <div role="tabpanel" id="as-p-ask" class="as-panel" aria-labelledby="as-t-ask" data-mode="ask" hidden>
+          <div class="as-in"><span class="label">Question</span><p class="as-say" id="asAsk"></p></div>
+          <div class="as-out"><span class="label">Answer, from the records</span>
+            <p class="as-answer" id="asAns">Ramesh Soni holds <span class="data">53.155 g</span> as of 18 Nov: 24.860 g and 31.500 g issued, less 3.205 g returned.</p>
+            <div class="chips-row"><span class="chip">TX-1044</span><span class="chip">TX-1047</span><span class="chip">TX-1045</span></div></div>
+        </div>
+      </div>
+      <p class="meta as-note">Illustrative. Drafts always show what was read and where it is uncertain.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SECURITY & ACCOUNTABILITY ============================== -->
+<section class="section tone-linen" id="trust" data-sec-id="trust">
+  <div class="wrap grid trust">
+    <div class="trust-head">
+      <p class="eyebrow" data-fx="track">Trust &amp; Security</p>
+      <h2 class="h2" data-fx="mask"><span class="ln"><span>Access follows the role.</span></span><span class="ln"><span>History follows the <em class="ital">record</em>.</span></span></h2>
+    </div>
+    <dl class="controls">
+      <div class="reveal-up"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-key"/></svg><dt>Role-based access</dt><dd>Jewellers, karigars and assayers each see and do only what their role allows.</dd></div>
+      <div class="reveal-up" style="--d:70ms"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><dt>A history that is added to, not edited away</dt><dd>A correction is a new event beside the old one, with a name and a time.</dd></div>
+      <div class="reveal-up" style="--d:140ms"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-file"/></svg><dt>Evidence stays with the entry</dt><dd>Photographs, slips and certificates are attached to the transaction they support.</dd></div>
+      <div class="reveal-up" style="--d:210ms"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-sync"/></svg><dt>Works where the connection doesn't</dt><dd>Entries made offline are kept on the device and synchronised when the connection returns.</dd></div>
+      <div class="reveal-up" style="--d:280ms"><svg class="ic " aria-hidden="true" focusable="false"><use href="#i-user"/></svg><dt>Every action has a person</dt><dd>Sign-in ties each weighment, acknowledgement and result to the person who made it.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final tone-stage" id="start">
+  <div class="hero-glow hero-glow--low" aria-hidden="true"></div>
+  <div class="wrap final-in">
+    <h2 class="display final-title" data-fx="mask"><span class="ln"><span>Start with</span></span><span class="ln"><span>an honest <em class="ital">record</em>.</span></span></h2>
+    <p class="lead" data-fx="blur">Create an account, or open a demo dashboard and follow an entry from issue to settlement.</p>
+    <div class="hero-actions" data-fx="blur" style="--d:120ms">
+      <a class="btn btn--primary btn--lg" href="register.html">Get started</a>
+      <a class="btn btn--secondary btn--lg" href="login.html">Login</a>
+    </div>
+    <p class="final-demos" data-fx="blur" style="--d:200ms">Or explore a demo: <a class="btn btn--text" href="app/jeweller.html">Jeweller</a> <a class="btn btn--text" href="app/karigar.html">Karigar</a> <a class="btn btn--text" href="app/assayer.html">Assayer</a></p>
+  </div>
+</section>
+
+</main>
+<footer class="foot tone-void">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="home.html#top"><span class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1C1916"/><circle cx="16" cy="16" r="6" fill="#C9A24A"/></svg></span><span class="wordmark">SUCCESSION</span></a>
+        <p class="foot-line">Transparency, accountability and digital traceability for the gold trade.</p>
+      </div>
+      <nav aria-label="Platform"><h3 class="label">Platform</h3><a href="home.html#about">About</a><a href="home.html#how">How it works</a><a href="home.html#features">Features</a><a href="home.html#trust">Trust &amp; Security</a></nav>
+      <nav aria-label="Demo"><h3 class="label">Try the demo</h3><a href="app/jeweller.html">Jeweller dashboard</a><a href="app/karigar.html">Karigar dashboard</a><a href="app/assayer.html">Assayer dashboard</a><a href="index.html">Replay the introduction</a></nav>
+      <nav aria-label="Account"><h3 class="label">Account</h3><a href="login.html">Login</a><a href="register.html">Get started</a></nav>
+      <nav aria-label="Legal"><h3 class="label">Legal</h3><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+    </div>
+    <p class="foot-base">© 2026 SUCCESSION. Prototype build — every figure, name and record shown on this site is illustrative.</p>
+  </div>
+</footer>
+<script src="js/fx.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

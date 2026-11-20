@@ -1,0 +1,327 @@
+{
+  "benchmark": "Voice & Hinglish Real-World NLP Evaluation",
+  "timestamp": "2026-11-10T12:48:16Z",
+  "subsystems_evaluated": [
+    "Hinglish Workshop Transaction Text Parser",
+    "Vernacular Fractional Weights & Numerals",
+    "Ambiguity & Clarification Dialogue Engine"
+  ],
+  "total_test_cases": 18,
+  "metrics": {
+    "structured_field_extraction_accuracy": 0.8889,
+    "transaction_kind_accuracy": 1.0,
+    "missing_field_detection_rate": 1.0,
+    "ambiguity_clarification_trigger_rate": 1.0
+  },
+  "speech_recognition_asr_status": {
+    "dataset": "Google FLEURS (hi_in, kn_in)",
+    "local_asr_engine": "faster_whisper",
+    "asr_engine_status": "NOT_INSTALLED (CPU fallback active; offline parser tested deterministically)",
+    "huggingface_streaming_investigation": "HuggingFace Datasets-Server /rows API returned 500; PyArrow HTTP Range requests timed out on CDN; selective streaming via 'datasets' requires 'soundfile' dependency. Full test split requires 864 MB (tar.gz) or 1,037 MB (parquet). Transfer on hold per master prompt instructions.",
+    "recommendation": "Maintain deterministic text-based parser as primary offline pipeline. Audio evaluation can execute once soundfile/faster-whisper dependencies or local audio collection are approved."
+  },
+  "case_details": [
+    {
+      "id": "hng_01",
+      "text": "Ramesh ko 50 gram 22 karat haar ke liye diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "50",
+        "karat": 22,
+        "karigar": "Ramesh",
+        "order_ref": "haar"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_02",
+      "text": "Suresh ko baais karat ki ring ke liye dus gram sona de do",
+      "kind_match": true,
+      "fields_match": false,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": false,
+      "parsed_fields": {
+        "karat": 22,
+        "karigar": "Suresh",
+        "order_ref": "ring"
+      },
+      "questions": [
+        "How many grams?",
+        "I heard '2'. Did you mean 2 grams? Please specify the unit (grams)."
+      ]
+    },
+    {
+      "id": "hng_03",
+      "text": "Ramesh se 49.85 gram 22 karat returned received hua",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "49.85",
+        "karat": 22
+      },
+      "questions": [
+        "Which karigar is this for?"
+      ]
+    },
+    {
+      "id": "hng_04",
+      "text": "Ramesh ko aadha gram 18 karat earring ke liye diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "0.5",
+        "karat": 18,
+        "karigar": "Ramesh",
+        "order_ref": "earring"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_05",
+      "text": "Ramesh ko dedh gram 22 karat mangalsutra ke liye diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "1.5",
+        "karat": 22,
+        "karigar": "Ramesh",
+        "order_ref": "mangalsutra"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_06",
+      "text": "Suresh ko twenty-four karat ka 100 gram bar issue karo due tomorrow",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "100",
+        "karat": 24,
+        "karigar": "Suresh",
+        "due_date": "2026-11-11",
+        "due_text": "tomorrow"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_07",
+      "text": "Ramesh ko 25 gram 20 karat chain ke liye parso tak",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "25",
+        "karat": 20,
+        "karigar": "Ramesh",
+        "order_ref": "chain",
+        "due_date": "2026-11-12",
+        "due_text": "day after tomorrow"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_08",
+      "text": "Suresh ko 15 gram 22 carat bangles aaj dena",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "15",
+        "karat": 22,
+        "karigar": "Suresh",
+        "order_ref": "bangles",
+        "due_date": "2026-11-10",
+        "due_text": "today"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_09",
+      "text": "Ramesh ko 22 karat ka haar banane ke liye diya",
+      "kind_match": true,
+      "fields_match": false,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": false,
+      "parsed_fields": {
+        "karat": 22,
+        "karigar": "Ramesh",
+        "order_ref": "banane"
+      },
+      "questions": [
+        "How many grams?"
+      ]
+    },
+    {
+      "id": "hng_10",
+      "text": "50 gram 22 carat kangan ke liye diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "50",
+        "karat": 22,
+        "order_ref": "kangan"
+      },
+      "questions": [
+        "Which karigar is this for?"
+      ]
+    },
+    {
+      "id": "hng_11",
+      "text": "Ramesh ko 40 gram payal ke liye diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "40",
+        "karigar": "Ramesh",
+        "order_ref": "payal"
+      },
+      "questions": [
+        "Which karat (e.g. 22)?"
+      ]
+    },
+    {
+      "id": "hng_12",
+      "text": "Ramesh ko 50 gram 22 carat kal dena",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "50",
+        "karat": 22,
+        "karigar": "Ramesh"
+      },
+      "questions": [
+        "Did you mean tomorrow? ('kal' can also mean yesterday.) Please say the day or date."
+      ]
+    },
+    {
+      "id": "hng_13",
+      "text": "Ramesh ko 50 gram aur 48 gram 22 karat diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "karat": 22,
+        "karigar": "Ramesh"
+      },
+      "questions": [
+        "Multiple conflicting weights heard (50, 48 g). Which exact weight should be recorded?",
+        "How many grams?",
+        "I heard '50'. Did you mean 50 grams? Please specify the unit (grams)."
+      ]
+    },
+    {
+      "id": "hng_14",
+      "text": "Give 50 grams 22 karat to Suresh",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "50",
+        "karat": 22
+      },
+      "questions": [
+        "Multiple karigars match 'Suresh': Suresh Rao, Suresh Verma. Which karigar do you mean?",
+        "Which karigar is this for?"
+      ]
+    },
+    {
+      "id": "hng_15",
+      "text": "Ramesh ko 50 22 carat diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "karat": 22,
+        "karigar": "Ramesh"
+      },
+      "questions": [
+        "How many grams?",
+        "I heard '50'. Did you mean 50 grams? Please specify the unit (grams)."
+      ]
+    },
+    {
+      "id": "hng_16",
+      "text": "Suresh ko paanch sau gram 18 karat gold vapas liya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "500",
+        "karat": 18,
+        "karigar": "Suresh"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_17",
+      "text": "Ramesh ko chaudah karat ka pendant ke liye das point paanch gram diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "10.5",
+        "karat": 14,
+        "karigar": "Ramesh",
+        "order_ref": "pendant"
+      },
+      "questions": []
+    },
+    {
+      "id": "hng_18",
+      "text": "Ramesh ko 22 karat jhumka ke liye 30 grams diya",
+      "kind_match": true,
+      "fields_match": true,
+      "missing_match": true,
+      "clarification_match": true,
+      "passed": true,
+      "parsed_fields": {
+        "weight_g": "30",
+        "karat": 22,
+        "karigar": "Ramesh",
+        "order_ref": "jhumka"
+      },
+      "questions": []
+    }
+  ]
+}

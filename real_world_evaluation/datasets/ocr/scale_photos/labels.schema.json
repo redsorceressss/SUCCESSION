@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WeighingScalePhotoAnnotation",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["photo_id", "image_file", "true_weight_g", "display_type", "lighting_condition", "viewing_angle"],
+    "properties": {
+      "photo_id": { "type": "string" },
+      "image_file": { "type": "string" },
+      "true_weight_g": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]{1,3})?$" },
+      "display_type": { "type": "string", "enum": ["green_led", "red_led", "lcd_dark_on_grey", "other"] },
+      "lighting_condition": { "type": "string", "enum": ["bright_led", "dim_ambient", "sunlight", "flash_specular"] },
+      "viewing_angle": { "type": "string", "enum": ["straight_0deg", "tilt_15deg", "steep_30deg"] },
+      "glare_present": { "type": "boolean" },
+      "scale_model": { "type": ["string", "null"] },
+      "verified_by": { "type": "string" }
+    }
+  }
+}

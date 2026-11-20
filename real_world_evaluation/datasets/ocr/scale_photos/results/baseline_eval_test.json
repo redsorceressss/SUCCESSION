@@ -1,0 +1,140 @@
+{
+  "benchmark": "SUCCESSION Phase 9.2 Deterministic OCR Baseline (Jewellery Scale Photos)",
+  "timestamp": "2026-11-13T01:07:16.416520+00:00",
+  "dataset_root": "real_world_evaluation\\datasets\\ocr\\scale_photos",
+  "annotations_file": "real_world_evaluation\\datasets\\ocr\\scale_photos\\annotated\\annotations.json",
+  "splits_file": "real_world_evaluation\\datasets\\ocr\\scale_photos\\splits\\splits_manifest.json",
+  "split_evaluated": "test",
+  "confidence_threshold_high_risk": 0.7,
+  "totals": {
+    "total_images_evaluated": 0,
+    "weight_eval_count": 0,
+    "text_eval_count": 0,
+    "exact_weight_correct": 0,
+    "exact_text_correct": 0,
+    "readable_predictions": 0,
+    "unreadable_predictions": 0,
+    "correct_readings": 0,
+    "incorrect_readings": 0,
+    "correct_abstentions": 0,
+    "incorrect_abstentions": 0,
+    "false_high_confidence_readings": 0,
+    "cer_num": 0,
+    "cer_den": 0
+  },
+  "metrics": {
+    "exact_weight_reading_accuracy": null,
+    "exact_display_text_accuracy": null,
+    "character_error_rate_cer": null,
+    "unreadable_image_rate": null,
+    "false_high_confidence_reading_rate": 0.0,
+    "correct_readings": 0,
+    "incorrect_readings": 0,
+    "correct_abstentions": 0,
+    "incorrect_abstentions": 0
+  },
+  "confidence_calibration": {
+    "available": false,
+    "sample_count": 0,
+    "bins": [
+      {
+        "range": [
+          0.0,
+          0.1
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.1,
+          0.2
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.2,
+          0.3
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.3,
+          0.4
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.4,
+          0.5
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.5,
+          0.6
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.6,
+          0.7
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.7,
+          0.8
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.8,
+          0.9
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      {
+        "range": [
+          0.9,
+          1.0
+        ],
+        "count": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    ],
+    "note": "Calibration is approximate and only meaningful with sufficient labeled in-domain samples across confidence ranges."
+  },
+  "breakdowns": {},
+  "per_image": [],
+  "notes": [
+    "Read-only evaluation. No datasets/annotations/source OCR implementation modified.",
+    "Energy-meter datasets must never be used as jewellery-scale ground truth.",
+    "A confident but incorrect reading is treated as high-risk; safe abstention is preferred."
+  ]
+}

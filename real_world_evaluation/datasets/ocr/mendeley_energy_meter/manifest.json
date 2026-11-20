@@ -1,0 +1,20 @@
+{
+  "dataset": "Mendeley Seven-Segment Energy Meter Dataset (fnn44p4mj8)",
+  "license": "CC0 1.0 Public Domain Dedication",
+  "retrieval_timestamp": "2026-11-10T12:32:31Z",
+  "files": [
+    {
+      "filename": "export-coco-2019-06-11T14_40_00.348423.json",
+      "size_bytes": 322934,
+      "sha256": "5b23d2380d433c218f2f26d800639c54dff51d74cb15ea9c842b0a552db3200b",
+      "verified": true
+    },
+    {
+      "filename": "RAW IMAGES.zip",
+      "size_bytes": 104176444,
+      "sha256": "d4dadbd2e51a8e85809a035afa390e8312d6c9206ae6bcd98e094fa61f623529",
+      "verified": true
+    }
+  ],
+  "extracted_images_count": 0
+}

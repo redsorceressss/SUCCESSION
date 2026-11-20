@@ -1,0 +1,20 @@
+.reveal-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.fade-in.in-view { opacity: 1; }
+
+@keyframes slowPulse {
+  0%,100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+.hero-scroll-cue { animation: slowPulse 2.8s ease-in-out infinite; }

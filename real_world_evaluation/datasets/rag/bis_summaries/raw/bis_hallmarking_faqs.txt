@@ -1,0 +1,50 @@
+# Bureau of Indian Standards (BIS) Hallmarking Reference Documentation
+Source: Bureau of Indian Standards / National Consumer Helpline, Department of Consumer Affairs, Government of India
+URLs: 
+- https://www.bis.gov.in/hallmarking-overview/hallmarking-faqs/hallmarking-faq/?lang=en
+- https://www.bis.gov.in/hallmarking-overview/hallmarking-faqs/common-consumer-faq/?lang=en
+- https://www.bis.gov.in/hallmarking-jewellers/?lang=en
+Retrieval Date: 2026-11-10
+Attribution: Material reproduced under the Government of India portal fair use and attribution policy. Official statutory marks excluded.
+
+---
+
+## 1. What is Hallmarking of Gold Jewellery?
+Hallmarking is the accurate determination and official recording of the proportionate content of precious metal in precious metal articles. Hallmarks are official marks used in India as a guarantee of purity or fineness of gold jewellery under the Bureau of Indian Standards Act, 2016. The primary objective of hallmarking is to protect the public against adulteration and to obligate manufacturers and jewellers to maintain legal standards of fineness.
+
+## 2. Mandatory Hallmarking and HUID
+Hallmarking of gold jewellery has been made mandatory in specified districts across India. Under the revised mandatory system, hallmarked gold jewellery consists of three distinct marks:
+1. The BIS Standard Mark (a triangular hallmark logo).
+2. Purity in Karat and Fineness grade (e.g., 22K916).
+3. A 6-digit alphanumeric Unique Identification number called HUID (Hallmark Unique Identification).
+Each hallmarked article receives a unique HUID laser-engraved at the Assaying and Hallmarking Centre (AHC) after non-destructive XRF assaying and fire assay testing. The HUID ensures complete traceability of the article from the assaying centre to the registered jeweller and the consumer.
+
+## 3. Recognized Karat Grades and Standard Fineness Values
+Under the Indian Standards for gold and gold alloys (IS 1417), hallmarking is officially permitted for the following specific purity grades:
+- 14 Karat (14K): Fineness 585 (58.5% pure gold)
+- 18 Karat (18K): Fineness 750 (75.0% pure gold)
+- 20 Karat (20K): Fineness 833 (83.3% pure gold)
+- 22 Karat (22K): Fineness 916 (91.6% pure gold)
+- 23 Karat (23K): Fineness 958 (95.8% pure gold)
+- 24 Karat Standard (24KS): Fineness 995 (99.5% pure gold)
+
+Note on 24 Karat gold: 24 Karat bullion and coin can have fineness of 999 or 995, but for hallmarked jewellery and artefacts under the mandatory scheme, 24KS corresponds to 995 fineness. Any article stamped with a purity mark must strictly match or exceed the stamped fineness.
+
+## 4. Consumer Rights and Verification
+Consumers purchasing hallmarked jewellery have the legal right to:
+1. Verify the authenticity of the HUID number on any jewellery article using the 'Verify HUID' feature on the official BIS CARE Mobile Application.
+2. The BIS CARE app displays the jeweller registration number, AHC recognition number, type of article, date of hallmarking, and the purity grade.
+3. Have the purity of hallmarked jewellery tested at any BIS-recognized Assaying and Hallmarking Centre upon paying the prescribed nominal testing fee.
+4. Claim compensation from the registered jeweller if the jewellery is found to be of lower purity than marked. Under the BIS Hallmarking Regulations, the jeweller is liable to pay compensation to the consumer amounting to two times the shortfall in purity calculated on the basis of the weight and prevailing price of gold.
+
+## 5. Jeweller Obligations and Invoice Rules
+Every jeweller selling hallmarked gold jewellery must be registered with the Bureau of Indian Standards. Jewellers have the following mandatory obligations:
+1. Display the BIS hallmarking logo and registration certificate prominently inside the retail showroom.
+2. Maintain a magnifying glass (minimum 10X magnification) or digital microscope at the sales counter so that consumers can clearly inspect the hallmark and HUID on the jewellery.
+3. Clearly indicate the following details on the retail invoice or sales bill:
+   - Description of each jewellery article.
+   - Net weight of the precious metal in grams.
+   - Purity in Karat and Fineness grade (e.g. 22K 916).
+   - Hallmark Unique Identification (HUID) number for each piece.
+   - Hallmarking fee charged per piece (as prescribed by BIS).
+4. Jewellers must not alter, deface, or modify any hallmarked article after receiving it back from the Assaying and Hallmarking Centre. If any resizing or structural alteration is carried out, the article must be resubmitted to the AHC for fresh hallmarking.

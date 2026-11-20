@@ -1,0 +1,50 @@
+[
+  {
+    "image_id": "scale_0001",
+    "image_file": "raw/scale_0001.jpg",
+    "image_width": 4032,
+    "image_height": 3024,
+    "display_bounding_box": {
+      "x_min": 1200,
+      "y_min": 900,
+      "x_max": 2100,
+      "y_max": 1300
+    },
+    "display_text": "12.345 g",
+    "weight_value": "12.345",
+    "unit": "g",
+    "readability": "readable",
+    "scale_type": "green_led",
+    "lighting_condition": "normal",
+    "camera_angle": "front",
+    "device_id": "device_A",
+    "capture_session_id": "session_001",
+    "annotation_status": "pending",
+    "notes": null,
+    "annotator_id": null
+  },
+  {
+    "image_id": "scale_0002",
+    "image_file": "raw/scale_0002.jpg",
+    "image_width": 4032,
+    "image_height": 3024,
+    "display_bounding_box": {
+      "x_min": 1100,
+      "y_min": 850,
+      "x_max": 2050,
+      "y_max": 1280
+    },
+    "display_text": null,
+    "weight_value": null,
+    "unit": null,
+    "readability": "unreadable",
+    "scale_type": "lcd",
+    "lighting_condition": "glare",
+    "camera_angle": "tilted",
+    "device_id": "device_B",
+    "capture_session_id": "session_002",
+    "annotation_status": "pending",
+    "notes": "Severe reflection over display; no reliable transcription.",
+    "annotator_id": null
+  }
+]

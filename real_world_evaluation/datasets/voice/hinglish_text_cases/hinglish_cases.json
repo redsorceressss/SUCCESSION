@@ -1,0 +1,186 @@
+[
+  {
+    "id": "hng_01",
+    "text": "Ramesh ko 50 gram 22 karat haar ke liye diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "50", "karat": 22, "order_ref": "haar" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Standard clean Hinglish issue statement"
+  },
+  {
+    "id": "hng_02",
+    "text": "Suresh ko baais karat ki ring ke liye dus gram sona de do",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Suresh", "weight_g": "10", "karat": 22, "order_ref": "ring" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Hindi number words with English article"
+  },
+  {
+    "id": "hng_03",
+    "text": "Ramesh se 49.85 gram 22 karat returned received hua",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "return",
+    "expected_fields": { "weight_g": "49.85", "karat": 22 },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Return transaction with decimal weight"
+  },
+  {
+    "id": "hng_04",
+    "text": "Ramesh ko aadha gram 18 karat earring ke liye diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "0.5", "karat": 18, "order_ref": "earring" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Vernacular fractional weight 'aadha gram'"
+  },
+  {
+    "id": "hng_05",
+    "text": "Ramesh ko dedh gram 22 karat mangalsutra ke liye diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "1.5", "karat": 22, "order_ref": "mangalsutra" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Vernacular fractional weight 'dedh gram'"
+  },
+  {
+    "id": "hng_06",
+    "text": "Suresh ko twenty-four karat ka 100 gram bar issue karo due tomorrow",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Suresh", "weight_g": "100", "karat": 24, "due_text": "tomorrow" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "English number words with relative due date tomorrow"
+  },
+  {
+    "id": "hng_07",
+    "text": "Ramesh ko 25 gram 20 karat chain ke liye parso tak",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "25", "karat": 20, "order_ref": "chain", "due_text": "day after tomorrow" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Hindi relative date 'parso'"
+  },
+  {
+    "id": "hng_08",
+    "text": "Suresh ko 15 gram 22 carat bangles aaj dena",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Suresh", "weight_g": "15", "karat": 22, "order_ref": "bangles", "due_text": "today" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Hindi relative date 'aaj'"
+  },
+  {
+    "id": "hng_09",
+    "text": "Ramesh ko 22 karat ka haar banane ke liye diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "karat": 22, "order_ref": "haar" },
+    "expected_missing": ["weight_g"],
+    "should_ask_clarification": true,
+    "description": "Missing weight: must identify weight_g is missing"
+  },
+  {
+    "id": "hng_10",
+    "text": "50 gram 22 carat kangan ke liye diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "weight_g": "50", "karat": 22, "order_ref": "kangan" },
+    "expected_missing": ["karigar"],
+    "should_ask_clarification": true,
+    "description": "Missing karigar: must prompt which karigar"
+  },
+  {
+    "id": "hng_11",
+    "text": "Ramesh ko 40 gram payal ke liye diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "40", "order_ref": "payal" },
+    "expected_missing": ["karat"],
+    "should_ask_clarification": true,
+    "description": "Missing karat: must prompt which karat"
+  },
+  {
+    "id": "hng_12",
+    "text": "Ramesh ko 50 gram 22 carat kal dena",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "50", "karat": 22 },
+    "expected_missing": [],
+    "should_ask_clarification": true,
+    "clarification_substr": "Did you mean tomorrow?",
+    "description": "Ambiguous date 'kal' (can mean tomorrow or yesterday)"
+  },
+  {
+    "id": "hng_13",
+    "text": "Ramesh ko 50 gram aur 48 gram 22 karat diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "karat": 22 },
+    "expected_missing": [],
+    "should_ask_clarification": true,
+    "clarification_substr": "Multiple conflicting weights heard",
+    "description": "Conflicting weights: system must ask clarification instead of picking arbitrarily"
+  },
+  {
+    "id": "hng_14",
+    "text": "Give 50 grams 22 karat to Suresh",
+    "known_karigars": ["Suresh Rao", "Suresh Verma"],
+    "expected_kind": "issue",
+    "expected_fields": { "weight_g": "50", "karat": 22 },
+    "expected_missing": [],
+    "should_ask_clarification": true,
+    "clarification_substr": "Multiple karigars match 'Suresh'",
+    "description": "Ambiguous karigar collision (multiple matches)"
+  },
+  {
+    "id": "hng_15",
+    "text": "Ramesh ko 50 22 carat diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "karat": 22 },
+    "expected_missing": ["weight_g"],
+    "should_ask_clarification": true,
+    "clarification_substr": "Did you mean 50 grams? Please specify the unit",
+    "description": "Bare number without unit: system must not guess, must ask for unit"
+  },
+  {
+    "id": "hng_16",
+    "text": "Suresh ko paanch sau gram 18 karat gold vapas liya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "return",
+    "expected_fields": { "weight_g": "500", "karat": 18 },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Higher weight 'paanch sau' (500g) return entry"
+  },
+  {
+    "id": "hng_17",
+    "text": "Ramesh ko chaudah karat ka pendant ke liye das point paanch gram diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "10.5", "karat": 14, "order_ref": "pendant" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Hindi numerals 14 karat ('chaudah karat') and decimal 'das point paanch gram'"
+  },
+  {
+    "id": "hng_18",
+    "text": "Ramesh ko 22 karat jhumka ke liye 30 grams diya",
+    "known_karigars": ["Ramesh", "Suresh"],
+    "expected_kind": "issue",
+    "expected_fields": { "karigar": "Ramesh", "weight_g": "30", "karat": 22, "order_ref": "jhumka" },
+    "expected_missing": [],
+    "should_ask_clarification": false,
+    "description": "Traditional jewellery article 'jhumka'"
+  }
+]

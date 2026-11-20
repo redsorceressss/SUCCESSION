@@ -1,0 +1,33 @@
+# Real-World Evaluation Framework Configuration
+
+evaluation:
+  environment: "offline-isolated"
+  random_seed: 42
+  production_database: "swarn.db"  # Must NEVER be modified by evaluation runners
+
+rag:
+  raw_dir: "real_world_evaluation/datasets/rag/bis_summaries/raw"
+  chunked_dir: "real_world_evaluation/datasets/rag/bis_summaries/chunked"
+  query_benchmark: "real_world_evaluation/datasets/rag/bis_summaries/rag_queries.json"
+  top_k: 2
+  min_retrieval_score: 0.10
+
+ocr:
+  mendeley_dir: "real_world_evaluation/datasets/ocr/mendeley_energy_meter"
+  scale_photos_dir: "real_world_evaluation/datasets/ocr/scale_photos"
+  severe_glare_threshold: 0.35
+  min_confidence_threshold: 0.70
+
+voice:
+  fleurs_hi_dir: "real_world_evaluation/datasets/voice/fleurs_hi_in_pilot"
+  fleurs_kn_dir: "real_world_evaluation/datasets/voice/fleurs_kn_in_pilot"
+  hinglish_cases_path: "real_world_evaluation/datasets/voice/hinglish_text_cases/hinglish_cases.json"
+  sample_rate_hz: 16000
+
+agent:
+  status: "deepset_on_hold"
+  gateway_test_mode: "mock_scoped_client"
+
+results:
+  output_dir: "real_world_evaluation/results"
+  report_path: "real_world_evaluation/real_world_report.md"

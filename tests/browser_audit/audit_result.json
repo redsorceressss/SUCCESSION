@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-20T15:41:57.211Z",
+  "viewportsTested": [
+    {
+      "viewport": "desktop_1366",
+      "valid": false,
+      "note": "missing elements"
+    },
+    {
+      "viewport": "desktop_1280",
+      "valid": false,
+      "note": "missing elements"
+    },
+    {
+      "viewport": "landscape_1024",
+      "valid": false,
+      "note": "missing elements"
+    },
+    {
+      "viewport": "tablet_768",
+      "valid": false,
+      "note": "missing elements"
+    },
+    {
+      "viewport": "embedded_634",
+      "valid": false,
+      "note": "missing elements"
+    },
+    {
+      "viewport": "mobile_390",
+      "valid": false,
+      "note": "missing elements"
+    }
+  ],
+  "rolesVerified": [
+    "jeweller",
+    "karigar",
+    "assayer"
+  ],
+  "consoleErrors": [],
+  "networkErrors": []
+}

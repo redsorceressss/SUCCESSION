@@ -1,0 +1,69 @@
+/* ==========================================================================
+   SUCCESSION — design tokens. SINGLE SOURCE OF TRUTH for the whole site.
+   Every colour below is lifted from the approved cinematic intro (index.html):
+   its :root palette, stage gradients, and the jewel "glow" values of its six pieces.
+   Nothing here is invented; derived tints are labelled as such.
+   ========================================================================== */
+:root{
+  /* --- Brand palette (intro :root) --- */
+  --ink:#1C1916;  --porcelain:#F4EEE6;  --pearl:#ECEEF0;  --linen:#E9E0D3;
+  --antique:#8A6420;  --gold:#C9A24A;  --gold-light:#F3DE9A;
+  --silver:#9AA1A9;  --silver-light:#F4F6F8;
+
+  /* --- Velvet stage (intro .stage / .entry gradients, body background) --- */
+  --void:#0D0B09;  --stage-hi:#1D1610;  --stage-mid:#100C09;  --stage-lo:#070504;
+  --stage-hi-2:#1A130E;  --stage-lo-2:#0A0806;
+  --dust:#E9C97A;                      /* gold dust particles in the intro (rgba 233,201,122) */
+  --paper:#F2EBDF;                     /* card paper baked into every jewellery card */
+
+  /* --- Jewel lights (glow1/glow2 of the six intro pieces) → the ONLY source of status hues --- */
+  --amber:#B8801F;     --amber-deep:#5B3A0E;       /* Maharani Moti Choker  → pending */
+  --garnet:#B3243F;    --garnet-deep:#4C0E1D;      /* Gulnaar Chandbali     → disputed / mismatch */
+  --emerald:#1F8A5F;   --emerald-deep:#0B3B2A;     /* Zumurrud Polki Choker → acknowledged / verified */
+  --jade:#4C9450;      --jade-deep:#173A1D;        /* Hara Jade Kada */
+  --sapphire:#2C55B5;  --sapphire-deep:#101F4C;    /* Neelam Moti Parure    → information */
+  --teal:#1D8F7B;      --teal-deep:#093A34;        /* Panna Rani Haar */
+
+  /* --- Text (opacities exactly as used in the intro, nudged only where contrast required it) --- */
+  --on-dark:#F4EEE6;
+  --on-dark-2:rgba(244,238,230,.66);              /* intro .cap-note */
+  --on-dark-3:rgba(244,238,230,.52);              /* intro used .42 / .4; raised for AA on stage-mid */
+  --on-light:#1C1916;
+  --on-light-2:rgba(28,25,22,.74);
+  --on-light-3:rgba(28,25,22,.62);                /* ≥4.5:1 on porcelain */
+
+  /* --- Rules & borders (intro border colours) --- */
+  --rule-dark:rgba(244,238,230,.14);
+  --rule-light:rgba(28,25,22,.14);
+  --gold-rule:rgba(201,162,74,.40);               /* intro .arrow / .pills border family */
+  --antique-rule:rgba(138,100,32,.38);            /* intro .pills b border */
+
+  /* --- Derived tints (mixed from the above, never new hues) --- */
+  --raised:color-mix(in srgb,var(--porcelain) 58%,#fff);   /* inputs / sheets sitting on porcelain */
+  --wash-amber:color-mix(in srgb,var(--amber) 14%,transparent);
+  --wash-garnet:color-mix(in srgb,var(--garnet) 11%,transparent);
+  --wash-emerald:color-mix(in srgb,var(--emerald) 12%,transparent);
+  --wash-sapphire:color-mix(in srgb,var(--sapphire) 11%,transparent);
+  --wash-gold:color-mix(in srgb,var(--gold) 16%,transparent);
+
+  /* --- Type --- */
+  --font-display:"Cormorant Garamond","Cormorant","EB Garamond",Georgia,"Times New Roman",serif;
+  --font-ui:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --font-data:"DM Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --fs-xs:.75rem; --fs-sm:.8125rem; --fs-md:.9375rem; --fs-base:1rem; --fs-lg:1.1875rem; --fs-xl:1.375rem;
+  --fs-h3:clamp(1.35rem,1.2rem + .6vw,1.75rem);
+  --fs-h2:clamp(2.1rem,1.2rem + 3.4vw,4rem);
+  --fs-h1:clamp(2.9rem,1.2rem + 5.9vw,6.6rem);
+  --lh-tight:1.02; --lh-snug:1.2; --lh-body:1.65;
+
+  /* --- Space (4px rhythm), shape, depth, motion --- */
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem; --s6:2rem; --s7:3rem; --s8:4.5rem; --s9:7rem; --s10:10rem;
+  --r1:2px; --r2:4px; --r-pill:999px;             /* pills only for the intro CTA + status dots */
+  --shadow-sheet:0 1px 0 rgba(28,25,22,.05),0 24px 40px -28px rgba(28,25,22,.45);
+  --shadow-dark:0 34px 60px -30px rgba(0,0,0,.9),0 10px 30px -12px rgba(0,0,0,.6);   /* intro card shadow */
+  --ease-out:cubic-bezier(.16,1,.3,1);            /* intro --out */
+  --ease-inout:cubic-bezier(.65,0,.35,1);         /* intro --inout */
+  --nav-h:72px;
+  --maxw:1280px; --gutter:clamp(20px,4vw,56px);
+  --focus:var(--gold-light);
+}

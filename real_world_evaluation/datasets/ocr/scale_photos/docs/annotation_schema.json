@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "succession.phase9_2.scale_photo_annotation.schema.json",
+  "title": "SUCCESSION Phase 9.2 Jewellery Scale-Photo Annotation Record",
+  "description": "Annotation schema for genuine jewellery weighing-scale photographs. One record per image/capture instance. Coordinates use absolute pixel values in the original image space unless otherwise documented.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "image_id",
+    "display_bounding_box",
+    "display_text",
+    "weight_value",
+    "unit",
+    "readability",
+    "scale_type",
+    "lighting_condition",
+    "camera_angle",
+    "device_id",
+    "capture_session_id",
+    "annotation_status"
+  ],
+  "properties": {
+    "image_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique image identifier (stable, filename-safe). Must match the annotation record identity and referenced raw image."
+    },
+    "image_file": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Relative path to the raw image from dataset root (e.g. raw/<file>). Recommended for validator resolution."
+    },
+    "image_width": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "Original image width in pixels. Required when bounding-box validation against dimensions is performed."
+    },
+    "image_height": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "Original image height in pixels. Required when bounding-box validation against dimensions is performed."
+    },
+    "display_bounding_box": {
+      "description": "Coordinates of the scale display region. Format: {\"x_min\": <px>, \"y_min\": <px>, \"x_max\": <px>, \"y_max\": <px>} with 0 <= x_min < x_max <= image_width and 0 <= y_min < y_max <= image_height.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x_min", "y_min", "x_max", "y_max"],
+          "properties": {
+            "x_min": { "type": "number", "minimum": 0 },
+            "y_min": { "type": "number", "minimum": 0 },
+            "x_max": { "type": "number", "exclusiveMinimum": 0 },
+            "y_max": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        { "type": "null" }
+      ]
+    },
+    "display_text": {
+      "type": ["string", "null"],
+      "description": "Exact visible display text as seen (including decimal point, leading zeros, minus sign, and unit if shown on display). Use null only when unreadable and no text can be reliably transcribed."
+    },
+    "weight_value": {
+      "type": ["string", "null"],
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "description": "Numeric weight value as an exact decimal string if readable/partially readable and parseable; otherwise null. Do not fabricate values."
+    },
+    "unit": {
+      "type": ["string", "null"],
+      "enum": ["g", "kg", "mg", "ct", "oz", "dwt", "other", null],
+      "description": "Visible unit on the scale display or known measurement unit. Use null only when not visible/determinable."
+    },
+    "readability": {
+      "type": "string",
+      "enum": ["readable", "partially_readable", "unreadable"],
+      "description": "Human readability of the displayed weight/text in the image."
+    },
+    "scale_type": {
+      "type": ["string", "null"],
+      "description": "Scale model/type/category if known (e.g. green_led, red_led, lcd, seven_segment, dot_matrix)."
+    },
+    "lighting_condition": {
+      "type": ["string", "null"],
+      "enum": ["normal", "low_light", "bright", "glare", "shadow", "mixed", "other", null],
+      "description": "Lighting condition during capture."
+    },
+    "camera_angle": {
+      "type": ["string", "null"],
+      "enum": ["front", "tilted", "side", "top_down", "steep", "other", null],
+      "description": "Camera/viewing angle relative to display."
+    },
+    "device_id": {
+      "type": ["string", "null"],
+      "description": "Scale/device identifier where available (used for leakage-aware splitting)."
+    },
+    "capture_session_id": {
+      "type": ["string", "null"],
+      "description": "Capture session identifier (same setup/session/burst grouping) for leakage-aware splitting."
+    },
+    "annotation_status": {
+      "type": "string",
+      "enum": ["pending", "verified", "rejected"],
+      "description": "Annotation verification state."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional annotator notes (occlusion reason, reflections, ambiguity)."
+    },
+    "annotator_id": {
+      "type": ["string", "null"],
+      "description": "Optional annotator/verifier identifier."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "readability": { "const": "readable" } } },
+      "then": {
+        "properties": {
+          "display_text": { "type": "string", "minLength": 1 },
+          "weight_value": { "type": "string", "pattern": "^-?[0-9]+(\\.[0-9]+)?$" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "readability": { "const": "unreadable" } } },
+      "then": {
+        "properties": {
+          "weight_value": { "type": ["null"] }
+        }
+      }
+    }
+  ]
+}

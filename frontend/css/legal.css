@@ -1,0 +1,16 @@
+/* SUCCESSION — legal pages */
+.legal{padding:calc(var(--nav-h) + 4rem) 0 6rem;min-height:70vh}
+.legal-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.legal-head{display:grid;gap:1.1rem;position:sticky;top:calc(var(--nav-h) + 2rem)}
+.legal-toc ol{counter-reset:t;display:grid;margin-top:.5rem;border-top:1px solid var(--rule)}
+.legal-toc li{counter-increment:t;border-bottom:1px solid var(--rule)}
+.legal-toc a{display:flex;gap:1rem;padding:.7rem 0;color:var(--on-light-2);text-decoration:none;font-size:var(--fs-md)}
+.legal-toc a::before{content:counter(t,decimal-leading-zero);font:400 var(--fs-xs) var(--font-data);color:var(--antique);padding-top:.2rem}
+.legal-toc a:hover{color:var(--on-light)}
+.legal-body{max-width:62ch;display:grid;gap:1rem}
+.legal-body h2{font:500 1.8rem/1.15 var(--font-display);margin-top:1.8rem;scroll-margin-top:calc(var(--nav-h) + 1.5rem)}
+.legal-body h2:first-child{margin-top:0}
+.legal-body p{color:var(--on-light-2);line-height:1.7}
+.legal-body b{color:var(--on-light)}
+.notice{margin-top:.4rem}
+@media (max-width:900px){.legal-grid{grid-template-columns:1fr}.legal-head{position:static}}

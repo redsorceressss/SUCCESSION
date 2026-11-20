@@ -1,0 +1,11 @@
+{
+  "dataset": "real_world_evaluation/datasets/ocr/scale_photos",
+  "version": "v0.1-template",
+  "created_at": null,
+  "notes": "Populate with genuine in-domain image_ids. Prefer grouping by device_id/capture_session_id and keep test independent.",
+  "splits": {
+    "train": { "image_ids": [], "device_ids": [], "capture_session_ids": [] },
+    "val": { "image_ids": [], "device_ids": [], "capture_session_ids": [] },
+    "test": { "image_ids": [], "device_ids": [], "capture_session_ids": [] }
+  }
+}

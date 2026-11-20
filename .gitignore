@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Caches and virtual environments
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+env/
+venv/
+.venv/
+ENV/
+
+# Databases & Runtime State
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+swarn.db*
+succession_dev.sqlite3*
+
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+
+# Local server / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Dynamic Evidence & Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Browser audit artifacts & temp profiles
+tests/browser_audit/screenshots/*.png
+!tests/browser_audit/screenshots/.gitkeep
+.tmp*
+_tmp*
+scratch/
+
+# Large dataset archives
+*.zip
+*.tar
+*.tar.gz
+
+# Raw benchmark images (124MB; see dataset_sources.md)
+**/raw_images/

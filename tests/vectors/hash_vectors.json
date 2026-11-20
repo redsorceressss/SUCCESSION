@@ -1,0 +1,31 @@
+[
+  {
+    "description": "Genesis block test vector",
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload": {
+      "action": "user_registered",
+      "actor": 1,
+      "at": "2026-11-10T00:00:00",
+      "data": {"role": "jeweller"},
+      "entity": "user",
+      "entity_id": 1
+    },
+    "canonical_json": "{\"action\":\"user_registered\",\"actor\":1,\"at\":\"2026-11-10T00:00:00\",\"data\":{\"role\":\"jeweller\"},\"entity\":\"user\",\"entity_id\":1}",
+    "expected_hash": "09488639bc407ae120a7c6778b3bdf6d701bdcd5a0ab8c4d77bfcbb061c9a4fd"
+  },
+  {
+    "description": "Transaction Version 1 test vector (50.00g)",
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload": {
+      "created_by": 1,
+      "karat": 22,
+      "note": "Initial bullion",
+      "scrap_g": "0.0000",
+      "transaction_id": 1,
+      "version_no": 1,
+      "weight_g": "50.0000"
+    },
+    "canonical_json": "{\"created_by\":1,\"karat\":22,\"note\":\"Initial bullion\",\"scrap_g\":\"0.0000\",\"transaction_id\":1,\"version_no\":1,\"weight_g\":\"50.0000\"}",
+    "expected_hash": "e894e48e84b4b934e19a6494e83915f5ba7bf3067a96f68efe81d604261bf1e2"
+  }
+]

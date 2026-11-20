@@ -1,0 +1,35 @@
+{
+  "report_type": "SUCCESSION_PHASE_9_2_SCALE_PHOTO_DATASET_VALIDATION",
+  "timestamp": "2026-11-13T01:07:16.245820+00:00",
+  "summary": {
+    "dataset_root": "real_world_evaluation\\datasets\\ocr\\scale_photos",
+    "annotations_file": "real_world_evaluation\\datasets\\ocr\\scale_photos\\annotated\\annotations.json",
+    "splits_file": "real_world_evaluation\\datasets\\ocr\\scale_photos\\splits\\splits_manifest.json",
+    "total_records": 0,
+    "unique_image_ids": 0,
+    "duplicate_image_id_count": 0,
+    "missing_image_files": 0,
+    "unreadable_image_files": 0,
+    "duplicate_content_groups": 0,
+    "bounding_boxes_valid": 0,
+    "bounding_boxes_invalid": 0,
+    "records_without_errors_estimate": 0,
+    "error_count": 0,
+    "warning_count": 0,
+    "opencv_available": true,
+    "class_distribution": {
+      "readability": {},
+      "annotation_status": {},
+      "unit": {},
+      "lighting_condition": {},
+      "camera_angle": {},
+      "scale_type": {}
+    },
+    "splits": {
+      "train": 0,
+      "val": 0,
+      "test": 0
+    }
+  },
+  "issues": []
+}

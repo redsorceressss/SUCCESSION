@@ -1,0 +1,250 @@
+/**
+ * SUCCESSION Animation System (Phase 7)
+ * Tasteful, accessible motion for enterprise SaaS UI.
+ * - CSS transitions/keyframes for shell, pages, cards, tables, forms, feedback
+ * - Web Animations API may be used by components where appropriate
+ * - Respects prefers-reduced-motion and avoids delaying financial confirmations
+ */
+
+:root {
+  --motion-duration-fast: 120ms;
+  --motion-duration: 200ms;
+  --motion-duration-slow: 320ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-distance-sm: 6px;
+  --motion-distance-md: 12px;
+}
+
+/* Page transitions (router applies .page-enter on #app-root) */
+#app-root.page-enter {
+  animation: succession-page-enter var(--motion-duration-slow) var(--motion-ease) both;
+}
+
+@keyframes succession-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard/stat cards and generic cards: subtle entrance */
+.page-body .card,
+.page-body .stat-card,
+.page-body .metric-box,
+.page-body .empty,
+.page-body .alert {
+  animation: succession-fade-up var(--motion-duration-slow) var(--motion-ease) both;
+}
+
+.page-body .row > [class*="col"] .card { animation-delay: 20ms; }
+.page-body .row > [class*="col"]:nth-child(2) .card { animation-delay: 40ms; }
+.page-body .row > [class*="col"]:nth-child(3) .card { animation-delay: 60ms; }
+.page-body .row > [class*="col"]:nth-child(4) .card { animation-delay: 80ms; }
+
+@keyframes succession-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Interactive elements: smooth hover/focus feedback */
+.btn,
+.nav-link,
+.card,
+.dropdown-item,
+.list-group-item,
+.form-control,
+.form-select,
+.form-check-input,
+.page-link,
+a {
+  transition:
+    color var(--motion-duration-fast) var(--motion-ease),
+    background-color var(--motion-duration-fast) var(--motion-ease),
+    border-color var(--motion-duration-fast) var(--motion-ease),
+    box-shadow var(--motion-duration) var(--motion-ease),
+    transform var(--motion-duration-fast) var(--motion-ease),
+    opacity var(--motion-duration-fast) var(--motion-ease);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Sidebar / nav */
+.navbar-vertical,
+.navbar-collapse {
+  transition: transform var(--motion-duration-slow) var(--motion-ease),
+              opacity var(--motion-duration) var(--motion-ease),
+              box-shadow var(--motion-duration) var(--motion-ease);
+}
+
+#sidebar.show {
+  animation: succession-slide-in-left var(--motion-duration-slow) var(--motion-ease-emphasized) both;
+}
+
+@keyframes succession-slide-in-left {
+  from {
+    transform: translateX(-16px);
+    opacity: 0.96;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Dropdowns (Tabler/Bootstrap) */
+.dropdown-menu {
+  animation: succession-scale-in var(--motion-duration) var(--motion-ease) both;
+  transform-origin: top right;
+}
+
+@keyframes succession-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Modals */
+.modal.fade .modal-dialog {
+  transition: transform var(--motion-duration-slow) var(--motion-ease),
+              opacity var(--motion-duration) var(--motion-ease);
+  transform: translateY(8px) scale(0.985);
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.modal-backdrop.show {
+  animation: succession-fade-in var(--motion-duration) var(--motion-ease) both;
+}
+
+@keyframes succession-fade-in {
+  from { opacity: 0; }
+  to { opacity: var(--bs-backdrop-opacity, 0.5); }
+}
+
+/* Notifications / toasts */
+.toast {
+  animation: succession-toast-in var(--motion-duration-slow) var(--motion-ease-emphasized) both;
+}
+
+.toast.toast-fadeout {
+  animation: succession-toast-out 180ms var(--motion-ease) forwards;
+}
+
+@keyframes succession-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes succession-toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+/* Tabs / progress / status transitions */
+.nav-tabs .nav-link,
+.progress-bar,
+.badge,
+.connectivity-pill,
+.connectivity-badge {
+  transition: all var(--motion-duration) var(--motion-ease);
+}
+
+/* Table row updates / hover feedback */
+.table tbody tr {
+  transition: background-color var(--motion-duration-fast) var(--motion-ease),
+              color var(--motion-duration-fast) var(--motion-ease);
+}
+
+/* Loading / skeleton states */
+.spinner,
+.spinner-border {
+  animation-duration: 0.75s;
+}
+
+.skeleton,
+.placeholder,
+.placeholder-glow .placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-glow .placeholder::after,
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: succession-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes succession-shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Empty states */
+.empty {
+  animation: succession-fade-up var(--motion-duration-slow) var(--motion-ease) both;
+}
+
+/* Form validation / feedback appearance */
+.invalid-feedback,
+.valid-feedback,
+.form-hint,
+.alert {
+  animation: succession-fade-in var(--motion-duration) var(--motion-ease) both;
+}
+
+/* Accessibility: reduce or remove motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #app-root.page-enter,
+  .page-body .card,
+  .page-body .stat-card,
+  .page-body .metric-box,
+  .page-body .empty,
+  .page-body .alert,
+  #sidebar.show,
+  .dropdown-menu,
+  .toast,
+  .empty,
+  .invalid-feedback,
+  .valid-feedback,
+  .form-hint {
+    animation: none !important;
+    transform: none !important;
+  }
+}
