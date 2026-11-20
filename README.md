@@ -3,226 +3,366 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/7d52c89f-f600-47e5-9de5-ba207fd4ada3" alt="SUCCESSION — Main application interface" width="100%">
+      <img src="https://github.com/user-attachments/assets/7d52c89f-f600-47e5-9de5-ba207fd4ada3" alt="SUCCESSION — Application Overview" width="100%">
       <br>
       <strong>SUCCESSION — Application Overview</strong>
     </td>
     <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/6118e49c-ccce-4506-8c24-82285bf90b5b" alt="SUCCESSION — Platform dashboard and workflows" width="100%">
+      <img src="https://github.com/user-attachments/assets/b9088a94-f646-4ff6-99ca-667e3d740104" alt="SUCCESSION — Platform Dashboard" width="100%">
       <br>
       <strong>SUCCESSION — Platform Dashboard</strong>
     </td>
   </tr>
 </table>
 
-**Dual-Custody Gold Ledger & Workflow Transparency Platform**
+<p align="center">
+  <strong>Dual-Custody Gold Ledger &amp; Workflow Transparency Platform</strong>
+  <br>
+  Every Transaction. Every Gram. Accounted For.
+</p>
 
-**Team:** TheMentalist  
-**Event:** Tech 4 Bharat Hackathon 2026
-
-SUCCESSION is a web application for tracking gold custody workflows across **jewellers, karigars, and assayers**. It provides role-based operations, versioned and auditable transaction history, evidence handling, confirmation/correction/dispute/settlement workflows, offline-tolerant client behavior for supported actions, and assistive AI utilities — scale-photo OCR, deterministic voice draft parsing, local RAG policy assistance, and a bounded advisory agent — while keeping financial decisions human-confirmed.
-
-> **Project Status — Verified**
->
-> - Maintained automated tests: **177 passed, 0 failed, 0 skipped, 2 warnings**
-> - Fresh-database Alembic migration to head: verified in a disposable environment
-> - Maintained frontend checks: passed
-> - Live browser E2E, live LLM-provider connectivity, production deployment, and PostgreSQL runtime: **not verified**
+<p align="center">
+  <strong>Team:</strong> TheMentalist &nbsp;|&nbsp;
+  <strong>Event:</strong> Tech 4 Bharat Hackathon 2026
+</p>
 
 ---
+
+SUCCESSION is a role-based web application designed to bring transparency, accountability, and traceability to gold custody workflows involving **jewellers, karigars, and assayers**.
+
+It provides structured transaction records, versioned history, evidence management, confirmation and correction workflows, dispute handling, independent verification, and controlled settlement processes.
+
+The platform also incorporates assistive AI utilities, including scale-photo OCR, deterministic voice draft parsing, local RAG-based policy assistance, and a bounded advisory agent — while keeping important financial decisions under human control.
+
+> **Project Verification Status**
+>
+> - Python automated test suite: **177 passed, 0 failed, 0 skipped**
+> - Python test warnings: **2**
+> - Fresh disposable-database Alembic migration: **Verified**
+> - Maintained frontend checks: **Passed**
+> - Live LLM-provider connectivity: **Not verified**
+> - PostgreSQL runtime: **Not verified**
+> - Production deployment: **Not verified**
+> - Live browser E2E/manual UI verification: **Not claimed by the automated test results**
 
 ## Table of Contents
 
 1. [Problem Statement](#1-problem-statement)
 2. [Solution Overview](#2-solution-overview)
-3. [Actual Roles](#3-actual-roles)
-4. [Architecture](#4-architecture)
-5. [Core Workflows](#5-core-workflows)
-6. [AI/ML Capabilities and Limitations](#6-aiml-capabilities-and-limitations)
+3. [User Roles and Permissions](#3-user-roles-and-permissions)
+4. [System Architecture](#4-system-architecture)
+5. [Core Features and Workflows](#5-core-features-and-workflows)
+6. [AI/ML Capabilities](#6-aiml-capabilities-and-limitations)
 7. [Getting Started](#7-getting-started)
-8. [Environment Variables](#8-environment-variables)
+8. [Environment Configuration](#8-environment-configuration)
 9. [Database Migrations](#9-database-migrations)
 10. [Testing and Verification](#10-testing-and-verification)
-11. [Frontend/Backend Integration](#11-frontendbackend-integration)
+11. [Frontend and Backend Integration](#11-frontend-and-backend-integration)
 12. [Demonstration Workflow](#12-demonstration-workflow)
-13. [Known Limitations](#13-known-limitations)
+13. [Known Limitations and Future Scope](#13-known-limitations-and-future-scope)
 14. [Team](#14-team)
 
 ---
 
 ## 1. Problem Statement
 
-In jewellery manufacturing, gold issued to artisans and returned as finished or scrap material can differ by small amounts.
+Gold jewellery manufacturing involves multiple stakeholders, particularly jewellers, karigars, and assayers.
 
-Manual records, fragmented communication, and weak evidence trails make discrepancies difficult to reconcile, increasing disputes, delays, and loss of trust between stakeholders.
+During manufacturing, gold is issued to artisans and later returned as finished jewellery, scrap, or other material. Even small differences in recorded and returned weights can create disagreements.
 
-Traditional workflows often lack a shared, traceable record of:
+Traditional manual workflows often rely on handwritten records, fragmented communication, and disconnected evidence. This makes it difficult to establish a reliable shared history of transactions.
 
-- How much gold was issued.
-- How much material was returned.
-- Whether both parties agree on recorded weights.
-- What evidence supports a transaction.
-- Whether a discrepancy is under review.
-- Who authorized a correction or settlement.
+Common challenges include:
 
-SUCCESSION addresses these gaps through a structured, role-aware gold custody and transaction workflow.
+- Inconsistent records of gold issued and returned.
+- Weight discrepancies between stakeholders.
+- Limited visibility into transaction status.
+- Difficulty tracking corrections and disagreements.
+- Missing or disconnected supporting evidence.
+- Unclear responsibility for verification and settlement.
+- Lack of a consistent, auditable transaction history.
+
+These gaps can lead to disputes, delays, reconciliation difficulties, and reduced trust between stakeholders.
+
+**SUCCESSION addresses this problem by introducing a structured, role-aware system for recording, reviewing, verifying, and reconciling gold custody transactions.**
 
 ## 2. Solution Overview
 
-SUCCESSION provides a shared, role-aware ledger and workflow system that:
+SUCCESSION provides a shared gold custody ledger and transaction workflow platform.
 
-- Records custody events as structured transactions with immutable/versioned history.
-- Uses **Decimal-based** weight and purity calculations instead of binary floating-point accounting.
-- Supports confirmations, correction requests, disputes, evidence, and **dual human approval** settlement flows.
-- Preserves append-only audit/hash-chain integrity for critical records.
-- Supports an offline-aware queue and synchronization pattern with idempotent replay for selected safe operations.
-- Offers assistive, non-authoritative AI tooling.
-- Maintains human oversight for important financial decisions.
+Its primary objectives are to:
 
-The objective is not merely to digitize a ledger, but to make every important gold transaction traceable, reviewable, and accountable.
+- Digitally record gold issuance, returns, and custody events.
+- Maintain versioned transaction history instead of silently overwriting important records.
+- Use Decimal-based calculations for weight, purity, and fine-gold accounting.
+- Support confirmation, correction requests, and dispute workflows.
+- Preserve supporting evidence, notes, and verification records.
+- Enable independent assayer verification where applicable.
+- Support controlled settlement with dual human approval.
+- Maintain audit and integrity records for critical operations.
+- Provide offline-tolerant synchronization for selected supported operations.
+- Offer assistive AI tools without granting AI authority over financial decisions.
 
-## 3. Actual Roles
+The central principle is simple:
+
+**Every important transaction should be recorded, reviewable, traceable, and accountable to the people involved.**
+
+## 3. User Roles and Permissions
 
 SUCCESSION has three operational user roles and a restricted system advisory role.
 
 ### Jeweller
-- Creates and manages orders.
-- Initiates gold custody transactions, including gold issuance.
-- Participates in confirmations, corrections, disputes, and settlements as permitted.
-- Reviews transaction history, passbook entries, and reconciliation information.
+
+The Jeweller manages the business-side custody workflow.
+
+Responsibilities include:
+
+- Creating and managing orders.
+- Initiating gold issuance transactions.
+- Recording relevant transaction details.
+- Reviewing returned material and reconciliation information.
+- Participating in confirmations, correction requests, and disputes.
+- Reviewing passbook entries and transaction history.
+- Participating in authorized settlement workflows.
 
 ### Karigar
-- Participates in assigned order and transaction workflows.
-- Records returns of finished or scrap material.
-- Reviews issued and returned quantities.
-- Participates in confirmations, corrections, disputes, and settlements as permitted.
+
+The Karigar participates in assigned manufacturing and custody workflows.
+
+Responsibilities include:
+
+- Viewing assigned orders and transactions.
+- Reviewing issued gold quantities.
+- Recording finished or scrap material returns.
+- Reviewing transaction and weight information.
+- Confirming entries or requesting corrections.
+- Raising disputes and providing supporting information.
+- Participating in authorized reconciliation and settlement workflows.
 
 ### Assayer
-- Performs assigned independent dispute and reweigh verification tasks.
-- Reviews relevant evidence and weighment information.
-- Provides verification within scoped permissions.
-- Cannot independently authorize financial settlement.
 
-### Agent — Restricted System/Advisory Role
-The advisory agent is a restricted backend/automation role for read, reminder, summary, draft, and logging-style assistance.
+The Assayer provides independent verification within assigned permissions.
 
-It **cannot** approve, confirm, resolve, settle, or modify authoritative financial records.
+Responsibilities include:
 
-> **Not implemented:** There is no Admin role or Admin dashboard in the current frontend or backend.
+- Reviewing assigned verification and dispute tasks.
+- Examining relevant weight information and supporting evidence.
+- Performing assigned reweigh or verification activities.
+- Recording verification outcomes.
+- Supporting dispute resolution through independent assessment.
 
-## 4. Architecture
+An Assayer cannot independently authorize financial settlement.
+
+### Restricted Advisory Agent
+
+The advisory agent is a restricted backend/system role intended for bounded assistance.
+
+It supports operations such as:
+
+- Reading permitted information.
+- Generating summaries.
+- Creating reminders.
+- Preparing drafts.
+- Recording permitted logs.
+
+It cannot approve, confirm, reject, resolve, settle, or modify authoritative financial records.
+
+> **Role clarification:** SUCCESSION currently implements Jeweller, Karigar, and Assayer as its operational user roles. There is no Admin role or Admin dashboard in the current application.
+
+## 4. System Architecture
 
 ### Technology Stack
 
-| Layer | Implementation |
+| Layer | Technologies |
 |---|---|
-| Backend | Python, FastAPI, Uvicorn, SQLAlchemy 2.x, Pydantic v2, PyJWT, Alembic |
-| Database | SQLite by default for development/local use; PostgreSQL-compatible URL/configuration path exists but is not runtime-validated |
-| Core Logic | Decimal-based purity/fine-gold mathematics, conservation/reconciliation, dispute splitting, integrity and hash utilities |
-| AI/Assistive | Classical OpenCV/NumPy scale-photo OCR, deterministic voice draft parsing, local BM25 RAG, optional OpenAI-compatible LLM client, bounded advisory agent |
-| Frontend | Vanilla JavaScript SPA using ES modules, hash router, vendored Tabler UI assets, PWA/service worker, offline queue/sync modules |
-| Testing | Pytest suite, frontend/Node checks, and browser-audit artifacts/scripts |
+| Backend | Python, FastAPI, Uvicorn |
+| ORM and Validation | SQLAlchemy 2.x, Pydantic v2 |
+| Authentication | JWT, PyJWT |
+| Database Migrations | Alembic |
+| Database | SQLite for local development; PostgreSQL-compatible configuration path not runtime-validated |
+| Core Accounting | Python Decimal arithmetic, reconciliation, fine-gold calculations |
+| Integrity | Audit logging, hash utilities, transaction history |
+| Computer Vision | OpenCV, NumPy, heuristic scale-photo OCR |
+| Voice Processing | Deterministic rule-based draft parsing |
+| Retrieval | Local BM25 document retrieval |
+| AI Integration | Optional OpenAI-compatible LLM client and bounded advisory agent |
+| Frontend | Vanilla JavaScript, ES modules, HTML, CSS |
+| UI Components | Vendored Tabler assets and custom styles |
+| Application Delivery | PWA, service worker, offline queue and synchronization |
+| Testing | Pytest and maintained JavaScript/Node checks |
 
 ### High-Level Architecture
 
 ```text
-                 USER INTERFACE
-          Browser SPA / Progressive Web App
-                         |
-                         v
+                    USER INTERFACE
+              Browser SPA / Progressive Web App
+                           |
+                           v
                 Authentication & RBAC
-                         |
-                         v
-                  FASTAPI BACKEND
-                         |
-          +--------------+--------------+
-          |              |              |
-          v              v              v
-      SQLAlchemy     Core Engine     AI Services
-          |              |              |
-          v              v              +---- Scale OCR
-       Database      Decimal Math      +---- Voice Parsing
-          |          Reconciliation    +---- Local RAG
-          |          Audit / Hashing   +---- Advisory Agent
-          |
-          v
-     Transaction History
-     Evidence & Custody Records
-     Disputes & Settlements
+                           |
+                           v
+                    FASTAPI BACKEND
+                           |
+             +-------------+-------------+
+             |             |             |
+             v             v             v
+        SQLAlchemy     Core Engine    AI Services
+             |             |             |
+             v             v             +---- Scale-Photo OCR
+          Database    Decimal Math       +---- Voice Draft Parsing
+             |        Reconciliation     +---- Local BM25 RAG
+             |        Audit / Hashing    +---- Advisory Agent
+             |
+             v
+       Transaction History
+       Evidence & Custody Records
+       Disputes & Settlements
 ```
 
-The frontend communicates with the FastAPI backend through authenticated API requests. The backend enforces role-based permissions and delegates accounting, integrity, and assistive AI operations to their respective modules.
+The frontend communicates with the FastAPI backend through authenticated API requests.
 
-Offline synchronization is supported for selected operations through an idempotent queue and replay mechanism.
+The backend is responsible for authoritative authorization, transaction processing, accounting operations, evidence handling, and workflow validation.
 
-## 5. Core Workflows
+The core engine handles accounting and reconciliation logic, while the AI modules provide assistive functionality.
 
-The following workflows are implemented:
+Selected offline-capable operations use a client-side queue and synchronization mechanism with idempotent replay handling.
 
-- Authentication and role-scoped authorization, enforced by the backend.
-- Order creation and custody transactions, including issue and return operations.
-- Decimal-based weight, karat, and scrap-material calculations.
-- Versioned transaction history, confirmations, and correction requests without silent overwrites.
-- Dispute workflows with original-entry preservation, claimed values, notes, evidence, and reweigh support.
-- Assayer assignment and independent verification with scoped access and independence checks.
-- Settlement drafting and dual human approval.
-- Passbook and reconciliation summaries.
-- Notifications and append-only audit logging/verification.
-- Offline-tolerant queue and synchronization for selected supported operations.
+## 5. Core Features and Workflows
 
-### Example: Gold Weight Discrepancy
+### 5.1 Authentication and Role-Based Access
 
-Consider a transaction in which:
+- JWT-based authentication.
+- Role-scoped application navigation.
+- Backend-enforced authorization.
+- Protected transaction and workflow operations.
+
+### 5.2 Gold Custody Transactions
+
+- Order creation and management.
+- Gold issuance records.
+- Finished and scrap material returns.
+- Weight and purity calculations.
+- Transaction history and reconciliation.
+
+### 5.3 Confirmation and Correction
+
+Important transaction entries support structured review.
+
+Stakeholders can:
+
+- Confirm recorded information.
+- Request corrections.
+- Raise disputes.
+
+Corrections are handled through traceable workflow operations rather than silently replacing the original record.
+
+### 5.4 Dispute Management
+
+Dispute workflows support:
+
+- Preservation of the original transaction.
+- Recording disputed or claimed values.
+- Notes and supporting evidence.
+- Reweigh requests.
+- Assigned assayer verification.
+- Controlled resolution.
+
+Disputed quantities are protected from automatic settlement.
+
+### 5.5 Evidence and Audit Trail
+
+- Supporting evidence uploads.
+- Transaction-linked notes.
+- Versioned history.
+- Audit logging.
+- Hash and integrity utilities.
+- Verification and reconciliation records.
+
+### 5.6 Assayer Verification
+
+- Scoped assayer assignments.
+- Independent verification tasks.
+- Relevant evidence and weighment review.
+- Verification outcomes.
+- Restrictions against unauthorized settlement approval.
+
+### 5.7 Settlement and Passbook
+
+- Settlement drafting.
+- Dual human approval.
+- Dispute-aware reconciliation.
+- Passbook and transaction summaries.
+- Historical transaction visibility.
+
+### 5.8 Offline-Tolerant Operations
+
+Selected supported operations use:
+
+- Client-side mutation queues.
+- Idempotent replay.
+- Synchronization handling.
+- Ownership and conflict checks.
+
+Offline support is partial; not every operation or evidence upload is available without connectivity.
+
+### Example: A Gold Weight Discrepancy
+
+Consider the following situation:
 
 - The Jeweller records **50.00 g** issued.
 - The Karigar reports **49.85 g**.
 
-SUCCESSION preserves the original entry and records the disagreement rather than silently overwriting the transaction.
+The difference is not silently overwritten or automatically settled.
 
-The workflow supports:
+SUCCESSION preserves the original record and provides a structured review workflow:
 
-1. Recording the discrepancy.
-2. Preserving the original transaction.
-3. Adding notes and supporting evidence.
-4. Requesting reweighing or independent verification where applicable.
-5. Holding the disputed quantity from automatic settlement.
-6. Allowing only authorized human decisions to resolve the dispute.
+1. The discrepancy is recorded.
+2. The original transaction remains preserved.
+3. The parties can provide notes and supporting evidence.
+4. Reweighing or independent verification can be requested.
+5. The disputed quantity is held from automatic settlement.
+6. Authorized stakeholders review and resolve the disagreement.
+7. Settlement proceeds only through the applicable human approval workflow.
 
-The advisory AI cannot approve, resolve, or settle the disagreement.
+The advisory AI cannot independently approve or resolve the dispute.
 
-This ensures that discrepancies remain visible and auditable until the appropriate stakeholders complete the review.
+This ensures that disagreements remain visible and traceable until the appropriate stakeholders complete the review.
 
 ## 6. AI/ML Capabilities and Limitations
 
-SUCCESSION incorporates assistive AI utilities to reduce manual effort while retaining human control over authoritative records.
+SUCCESSION incorporates assistive AI utilities to reduce manual effort and improve access to information.
 
-| Component | Actual Behavior | Limitations and Boundaries |
+These components are designed to support users, not replace human verification or authorize financial decisions.
+
+| Component | Current Implementation | Limitations and Safety Boundaries |
 |---|---|---|
-| **Scale-Photo OCR** (`POST /scale-photos`) | Classical image preprocessing and seven-segment/heuristic decoding, confidence and abstention handling, MATCH/MISMATCH/UNREADABLE results, evidence persistence and audit logging, manual confirmation required. | Not a trained jewellery-specific OCR model. No measured in-domain accuracy. Never automatically updates authoritative financial records. |
-| **Voice Draft Parsing** (`POST /voice/parse`) | Deterministic rule-based parsing for Hindi/Kannada number and weight phrases, editable drafts, known-karigar context, ambiguity handling, and readback/confirmation cues. Parsing itself saves nothing. | Not a validated ASR/NLU model. Human review and explicit authorized submission are required. Browser/client speech input and backend parsing are separate concerns. |
-| **RAG Policy Assistant** (`POST /ai/query`) | Local BM25 retrieval over indexed Markdown policy documents, chunk citations/grounding, prompt-injection neutralization, server-derived tenant scope, and deterministic excerpt fallback. Optional OpenAI-compatible LLM generation when configured. | Not a vector database. Answers are limited to the available corpus. No proven private shop-level corpus-isolation claim. Informational only; cannot approve or modify records. |
-| **Advisory Agent** (`ai_engine/agent/`) | Permission-gated read, remind, summarize, draft, and log workflows with bounded state transitions and guardrails. | Cannot confirm, approve, reject, resolve, or settle disputes; edit financial values; or override human decisions. |
-| **Optional LLM Integration** (`ai_engine/llm.py`) | OpenAI-compatible `/chat/completions` client with timeout, optional authentication, strict parsing/validation, and fail-closed fallback to deterministic behavior. | Configuration-dependent. Live provider connectivity is not verified unless explicitly configured and tested. Responses are not authoritative. |
+| **Scale-Photo OCR** (`POST /scale-photos`) | Classical image preprocessing and seven-segment/heuristic decoding. Provides confidence and abstention handling, MATCH/MISMATCH/UNREADABLE outcomes, evidence persistence, and audit logging. | Not a trained jewellery-specific OCR model. No measured in-domain accuracy. Manual confirmation remains necessary. |
+| **Voice Draft Parsing** (`POST /voice/parse`) | Deterministic rule-based parsing for supported Hindi/Kannada number and weight phrases. Produces editable drafts with ambiguity handling and confirmation cues. | Not a validated ASR/NLU model. Parsing itself does not save or submit transactions. |
+| **RAG Policy Assistant** (`POST /ai/query`) | Local BM25 retrieval over indexed Markdown policy documents, with source references, prompt-injection neutralization, server-derived tenant scope, and deterministic excerpt fallback. | Not a vector database. Answers are limited to the indexed corpus. Private shop-level corpus isolation is not claimed as proven. |
+| **Advisory Agent** (`ai_engine/agent/`) | Permission-gated read, reminder, summary, draft, and logging-style assistance with bounded state transitions. | Cannot approve, confirm, reject, resolve, or settle disputes, or modify authoritative financial records. |
+| **Optional LLM Integration** (`ai_engine/llm.py`) | OpenAI-compatible `/chat/completions` client with timeout handling, optional authentication, response validation, and deterministic fallback. | Configuration-dependent. Live external provider connectivity is not verified unless separately configured and tested. |
 
 ### AI Safety Principles
 
-All AI functionality is assistive.
+All AI functionality is assistive and human-gated.
 
-- AI-generated information is subject to human review.
 - OCR output does not automatically replace recorded weights.
-- Voice parsing produces editable drafts rather than automatically submitting transactions.
-- RAG answers are informational and grounded in available documentation.
+- Voice parsing creates editable drafts rather than automatically submitting transactions.
+- RAG responses provide informational assistance based on available documentation.
+- AI-generated information remains subject to human review.
 - The advisory agent cannot authorize financial actions.
-- Disputes and settlements remain subject to authorized human decisions.
+- Dispute resolution and settlement remain under authorized human control.
+
+**AI assists the workflow; it does not become the authority over the ledger.**
 
 ## 7. Getting Started
 
 ### Prerequisites
 
 - Python 3.11 or later.
-- `pip` and dependencies listed in `requirements.txt`.
+- pip.
 - Node.js for maintained frontend/JavaScript checks.
-- A modern browser for frontend and PWA usage.
+- A modern web browser.
 
 ### 7.1 Clone the Repository
 
@@ -231,9 +371,7 @@ git clone https://github.com/redsorceressss/SUCCESSION.git
 cd SUCCESSION
 ```
 
-### 7.2 Configure the Environment
-
-Create a local environment file:
+### 7.2 Create the Environment File
 
 ```powershell
 Copy-Item .env.example .env
@@ -241,7 +379,7 @@ Copy-Item .env.example .env
 
 Edit `.env` and configure the required values for your local environment.
 
-**Never commit `.env` or expose API credentials.**
+**Never commit `.env` files or expose API credentials.**
 
 ### 7.3 Install Dependencies
 
@@ -251,11 +389,13 @@ python -m pip install -r requirements.txt
 
 ### 7.4 Initialize a Fresh Database
 
-For a fresh database, apply the migrations:
+For a fresh database, apply the available migrations:
 
 ```powershell
 python -m alembic upgrade head
 ```
+
+See the database migration section before applying migrations to an existing database.
 
 ### 7.5 Start the Backend
 
@@ -275,7 +415,7 @@ Backend endpoints:
 
 ### 7.6 Start the Frontend
 
-Open another terminal at the repository root:
+Open a second terminal from the repository root:
 
 ```powershell
 python -m http.server 3000 --directory frontend
@@ -293,18 +433,18 @@ The frontend API base resolves in this order:
 2. `localStorage['succession_api_base']`
 3. `http://127.0.0.1:8000` as the default.
 
-> **Note:** Backend and frontend must both be running for authenticated application workflows to function correctly.
+> **Important:** Both the frontend and backend must be running for authenticated application workflows to function correctly.
 
-## 8. Environment Variables
+## 8. Environment Configuration
 
-Configure these values in your local `.env` file. Refer to `.env.example` for the available configuration placeholders.
+Configure local values in `.env`, using `.env.example` as the reference.
 
 | Variable | Purpose |
 |---|---|
-| `APP_ENV` | Application environment: development or production. Production enforces a secure `SECRET_KEY`. |
+| `APP_ENV` | Application environment: development or production. |
 | `SECRET_KEY` | JWT signing secret. Must be strong and unique in production. |
-| `DATABASE_URL` | Database connection string. Defaults to a local SQLite path; PostgreSQL URL support exists but is not runtime-validated. |
-| `ALLOWED_ORIGINS` | Comma-separated CORS origins. Required for production; development defaults to local origins. |
+| `DATABASE_URL` | Database connection string. Defaults to a local SQLite path. |
+| `ALLOWED_ORIGINS` | Comma-separated CORS origins. Production requires explicit configuration. |
 | `ACCESS_TOKEN_MINUTES` | JWT access-token lifetime. |
 | `RATE_LIMIT` | Global API rate limit, for example `60/minute`. |
 | `UPLOAD_DIR` | Evidence and upload storage directory. |
@@ -323,19 +463,21 @@ Configure these values in your local `.env` file. Refer to `.env.example` for th
 
 ### Optional LLM Provider
 
-SUCCESSION's RAG functionality works without an external LLM through deterministic retrieval and excerpt fallback.
+The RAG functionality supports deterministic retrieval and excerpt fallback without an external LLM.
 
-To enable LLM-enhanced answers, configure a reachable OpenAI-compatible endpoint exposing:
+For LLM-enhanced responses, configure a reachable OpenAI-compatible endpoint exposing:
 
 ```text
 POST {LLM_BASE_URL}/chat/completions
 ```
 
-Provide a valid `LLM_MODEL` and credentials as required. When configured, `LLM_API_KEY` is sent as a bearer token.
+Provide the appropriate `LLM_MODEL` and credentials as required.
 
-If configuration, credentials, or provider connectivity are unavailable, the system falls back to safe deterministic behavior.
+When configured, `LLM_API_KEY` is sent as a bearer token.
 
-**Credentials must never be logged, committed, or exposed publicly.**
+If configuration, credentials, or provider connectivity are unavailable, the system falls back to deterministic behavior.
+
+**Never log, commit, or publicly expose provider credentials.**
 
 ### Development Helper Scripts
 
@@ -344,11 +486,11 @@ The following scripts are development utilities:
 - `scripts/seed_demo.py`
 - `scripts/create_agent.py`
 
-They require explicit safeguards, securely provided credentials, and an already-migrated disposable database.
+They require appropriate safeguards, securely provided credentials, and an already-migrated disposable database.
 
-Never run them against `swarn.db`, production data, or real upload/evidence directories.
+Do not run them against `swarn.db`, production data, or real upload/evidence directories.
 
-See `docs/setup.md` for verified usage and safety constraints.
+Refer to `docs/setup.md` for verified usage and safety constraints.
 
 ## 9. Database Migrations
 
@@ -356,29 +498,31 @@ See `docs/setup.md` for verified usage and safety constraints.
 
 - Configuration: `alembic.ini`
 - Migration directory: `backend/alembic`
-- Current migration head includes `0002_assayer_assignments`.
+- Current migration head: `0002_assayer_assignments`
 
-### Fresh Database
+### Fresh Database Verification
 
-A fresh disposable SQLite database was used to verify:
+A fresh disposable SQLite database was used to verify that:
 
 - `alembic upgrade head` completes successfully.
-- The expected tables are created.
+- Expected tables are created.
 - `assayer_assignments` and its indexes are present.
 - The migration head is recorded.
 - Application imports remain compatible.
 
 ### Existing Local Databases
 
-Existing databases may have different schema or migration-stamp states. For example, some databases may have been created through application metadata rather than an Alembic-managed initialization.
+Existing databases may have different schema and migration-stamp states.
 
-Inspect existing database state carefully before applying migrations.
+Some local databases may have been initialized through application metadata rather than an Alembic-managed initialization.
 
-**Do not downgrade, reset, or blindly modify existing databases or their records.**
+Inspect the existing database state before applying migrations.
+
+**Do not downgrade, reset, overwrite, or blindly modify existing databases or their records.**
 
 ## 10. Testing and Verification
 
-### Backend, AI, Core, and E2E Tests
+### Python Test Suite
 
 Run the maintained Python test suite from the repository root:
 
@@ -392,7 +536,7 @@ python -m pytest tests -q
 python -m pytest tests/backend/test_scale_photo_endpoint.py tests/backend/test_voice_parse_endpoint.py tests/backend/test_ai_rag_tenant_isolation.py tests/ai/test_rag.py tests/ai/test_parse_rules.py tests/ai/test_agent.py -q
 ```
 
-### Frontend and JavaScript Tests
+### Frontend and JavaScript Checks
 
 Run the maintained checks individually:
 
@@ -415,43 +559,45 @@ node tests/frontend/test_voice_draft_review.mjs
 ### Latest Verified Results
 
 | Test Category | Result |
-|---|---|
+|---|---:|
 | Backend tests | 110 passed |
 | AI tests | 47 passed |
 | Core tests | 10 passed |
 | E2E/API workflow tests | 10 passed |
-| **Total Python tests** | **177 passed, 0 failed, 0 skipped** |
+| **Total Python tests** | **177 passed** |
+| Python failures | 0 |
+| Python skipped tests | 0 |
 | Python warnings | 2 |
 | Frontend hash-vector checks | Passed |
 | Offline QR and payload checks | Passed |
 | ECDSA P-256 signing and tamper rejection | Passed |
-| Offline queue and sync behavior | 16/16 passed |
+| Offline queue and synchronization behavior | 16/16 passed |
 | RAG assistant panel tests | Passed |
 | Scale OCR review tests | Passed |
 | Voice draft review tests | Passed |
 | Fresh disposable database migration | Passed |
 
-The focused AI/ML subset reported **54 passed, 2 warnings**.
+The focused AI/ML test subset reported **54 passed, 2 warnings**.
 
-> These results describe the verified development environment. They do not imply that every production deployment, external provider, or browser/device combination has been validated.
+These results describe the verified development environment. They do not establish production readiness or guarantee compatibility with every browser, device, database, or external provider.
 
-## 11. Frontend/Backend Integration
+## 11. Frontend and Backend Integration
 
 ### Authentication
 
 - JWT bearer-token authentication.
-- Requests use `Authorization: Bearer <token>`.
-- Frontend session information is stored in local storage.
+- Authenticated API requests using `Authorization: Bearer <token>`.
+- Frontend session information stored in local storage.
 - Unauthorized `401` responses clear the session and redirect to login.
 
 ### CORS
 
-- Development configuration allows local origins.
+- Development configuration supports local origins.
 - Production requires explicitly configured `ALLOWED_ORIGINS`.
 
 ### API Integration
 
-The frontend integrates with the existing FastAPI routes for:
+The frontend integrates with existing FastAPI routes for:
 
 - Authentication.
 - Orders and transactions.
@@ -469,21 +615,21 @@ The frontend integrates with the existing FastAPI routes for:
 
 - Multipart uploads are supported for scale photos and dispute evidence.
 - Backend validation and upload-size restrictions apply.
-- Uploads are not queued for offline replay.
+- Evidence uploads are not queued for offline replay.
 
 ### Offline and Synchronization
 
-The client queues only selected supported mutations with idempotent replay contracts.
+Selected supported mutations use a client-side queue with idempotent replay contracts.
 
 The backend `/sync` endpoint enforces idempotency, ownership, and conflict handling.
 
-Offline support is partial and does not imply that every workflow or upload is available without connectivity.
+Offline support is partial and does not mean that every workflow or upload is available without connectivity.
 
 ### Role Authorization
 
-Frontend guards provide role-specific navigation and user experience.
+Frontend guards control role-specific navigation and user experience.
 
-However, **backend authorization is authoritative**. Frontend visibility alone is not considered a security boundary.
+However, **backend authorization is authoritative**. Frontend visibility alone is not treated as a security boundary.
 
 ## 12. Demonstration Workflow
 
@@ -491,34 +637,52 @@ A suggested demonstration sequence:
 
 1. Authenticate as a Jeweller, Karigar, or Assayer using authorized demo accounts and data in the target environment.
 2. Create or select an order.
-3. Record a gold issue transaction with the relevant weight and karat.
-4. Demonstrate return and confirmation workflows.
+3. Record a gold issuance transaction with its relevant weight and karat.
+4. Demonstrate material return and confirmation workflows.
 5. Introduce a discrepancy: **50.00 g recorded versus 49.85 g claimed**.
-6. Show how the original entry remains preserved and the discrepancy becomes auditable.
-7. Demonstrate evidence, notes, and reweigh support where permitted.
-8. Show that the disputed amount is held from automatic settlement.
-9. Complete the authorized human resolution workflow where appropriate.
-10. Demonstrate dual-approved settlement and passbook/history records.
-11. Optionally demonstrate OCR review, voice draft parsing, and RAG policy assistance.
+6. Show how the original transaction remains preserved.
+7. Demonstrate correction requests, notes, evidence, and dispute tracking.
+8. Show reweigh or independent assayer verification where permitted.
+9. Demonstrate that the disputed quantity is held from automatic settlement.
+10. Complete the authorized human resolution workflow where appropriate.
+11. Demonstrate dual-approved settlement and passbook/history records.
+12. Optionally demonstrate OCR review, voice draft parsing, and RAG policy assistance.
 
-Use only safe, pre-existing demo data and authorized accounts.
+Use only authorized demo accounts and safe demo data.
 
 Do not assume or invent credentials.
 
-## 13. Known Limitations
+## 13. Known Limitations and Future Scope
 
-The following limitations should be considered when evaluating or deploying SUCCESSION:
+SUCCESSION is a working development prototype. The following limitations should be considered when evaluating or deploying the platform.
 
-- **No Admin role:** No Admin dashboard or Admin workflow is implemented.
-- **Browser E2E:** Live browser E2E/manual UI verification is not claimed as part of the automated test results documented above.
-- **LLM provider:** Live external LLM responses are not verified without valid configured credentials and a reachable provider. Deterministic fallback remains available.
-- **OCR:** The current implementation is classical and assistive, not a trained jewellery-specific model. No in-domain accuracy benchmark is claimed.
-- **Voice:** The current backend parser is deterministic draft parsing, not a validated ASR/NLU product. Human review and explicit submission are required.
-- **RAG:** Local BM25 retrieval over Markdown documentation, not a vector database. Answers are corpus-limited; no private shop-level isolation claim is made.
-- **Offline support:** Partial support for selected operations. Full behavior across all devices and browsers is not runtime-verified.
-- **PostgreSQL:** A compatible configuration path exists, but PostgreSQL runtime behavior is not validated.
-- **Production deployment:** Production deployment and full production hardening are not verified.
-- **Existing databases:** Local migration-stamp and schema states may differ. Existing data must be inspected before migration or modification.
+| Area | Current Status |
+|---|---|
+| Operational roles | Jeweller, Karigar, and Assayer implemented; no Admin role. |
+| Browser E2E | Not claimed as part of the automated test results documented here. |
+| LLM provider | Live external provider connectivity not verified. |
+| Scale OCR | Classical heuristic implementation; no trained jewellery-specific model or in-domain accuracy benchmark. |
+| Voice processing | Deterministic draft parsing; not a validated ASR/NLU product. |
+| RAG | Local BM25 retrieval over Markdown documents; not a vector database. |
+| RAG isolation | No proven private shop-level corpus-isolation claim. |
+| Offline support | Partial support for selected operations; not all workflows and uploads are available offline. |
+| PostgreSQL | Compatible configuration path exists; runtime behavior is not validated. |
+| Production deployment | Production deployment and full production hardening are not verified. |
+| Existing databases | Schema and migration-stamp states may differ; inspect before applying migrations. |
+
+### Future Scope
+
+Potential areas for further development and validation include:
+
+- Training and evaluating a jewellery-specific scale-display OCR model using real-world images.
+- Building a validated speech-to-text and multilingual voice workflow.
+- Expanding offline capabilities and conflict-resolution testing.
+- Strengthening tenant-specific document retrieval and isolation guarantees.
+- Validating PostgreSQL compatibility.
+- Conducting broader browser, device, and real-world workflow testing.
+- Production deployment, security review, monitoring, and operational hardening.
+
+These are future development directions, not claims of already completed functionality.
 
 ## 14. Team
 
@@ -526,10 +690,17 @@ The following limitations should be considered when evaluating or deploying SUCC
 |---|---|
 | Project | **SUCCESSION** |
 | Project Category | Gold Custody, Ledger & Workflow Transparency |
-| Team | **TheMentalist** |
+| Team Name | **TheMentalist** |
 | Event | **Tech 4 Bharat Hackathon 2026** |
 
 ---
 
-**SUCCESSION — Every Transaction. Every Gram. Accounted For.**
-
+<p align="center">
+  <strong>SUCCESSION</strong>
+  <br>
+  Every Transaction. Every Gram. Accounted For.
+  <br><br>
+  Built by <strong>Team TheMentalist</strong>
+  <br>
+  Tech 4 Bharat Hackathon 2026
+</p>
