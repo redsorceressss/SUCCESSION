@@ -26,8 +26,6 @@
   <strong>Event:</strong> Tech 4 Bharat Hackathon 2026
 </p>
 
----
-
 SUCCESSION is a role-based web application designed to bring transparency, accountability, and traceability to gold custody workflows involving **jewellers, karigars, and assayers**.
 
 It provides structured transaction records, versioned history, evidence management, confirmation and correction workflows, dispute handling, independent verification, and controlled settlement processes.
@@ -45,6 +43,8 @@ The platform also incorporates assistive AI utilities, including scale-photo OCR
 > - Production deployment: **Not verified**
 > - Live browser E2E/manual UI verification: **Not claimed by the automated test results**
 
+---
+
 ## Table of Contents
 
 1. [Problem Statement](#1-problem-statement)
@@ -52,7 +52,7 @@ The platform also incorporates assistive AI utilities, including scale-photo OCR
 3. [User Roles and Permissions](#3-user-roles-and-permissions)
 4. [System Architecture](#4-system-architecture)
 5. [Core Features and Workflows](#5-core-features-and-workflows)
-6. [AI/ML Capabilities](#6-aiml-capabilities-and-limitations)
+6. [AI/ML Capabilities and Limitations](#6-aiml-capabilities-and-limitations)
 7. [Getting Started](#7-getting-started)
 8. [Environment Configuration](#8-environment-configuration)
 9. [Database Migrations](#9-database-migrations)
@@ -60,7 +60,8 @@ The platform also incorporates assistive AI utilities, including scale-photo OCR
 11. [Frontend and Backend Integration](#11-frontend-and-backend-integration)
 12. [Demonstration Workflow](#12-demonstration-workflow)
 13. [Known Limitations and Future Scope](#13-known-limitations-and-future-scope)
-14. [Team](#14-team)
+14. [Continuous Development](#14-continuous-development)
+15. [Team](#15-team)
 
 ---
 
@@ -684,7 +685,19 @@ Potential areas for further development and validation include:
 
 These are future development directions, not claims of already completed functionality.
 
-## 14. Team
+## 14. Continuous Development
+
+SUCCESSION is an evolving project, and development will continue beyond the hackathon.
+
+We are committed to continuously improving the platform by refining existing workflows, strengthening security and reliability, enhancing AI/ML capabilities, and introducing new features based on testing and real-world feedback.
+
+**Future improvements, bug fixes, feature enhancements, and project updates will be maintained and published through this GitHub repository.**
+
+The current release represents an important development milestone, not the end of the project.
+
+Suggestions, feedback, and constructive contributions are welcome.
+
+## 15. Team
 
 | Detail | Information |
 |---|---|
